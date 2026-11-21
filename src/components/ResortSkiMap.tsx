@@ -131,9 +131,12 @@ export function ResortSkiMap({
         sources: {
           winter: {
             type: 'raster',
-            tiles: ['https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png'],
+            tiles: [
+              'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+            ],
             tileSize: 256,
-            attribution: '© OpenStreetMap, © CARTO',
+            maxzoom: 19,
+            attribution: '© Esri, HERE, Garmin, OpenStreetMap contributors',
           },
           topo: {
             type: 'raster',
