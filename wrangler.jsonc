@@ -2,8 +2,11 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ski-cond",
   "main": "./worker/index.ts",
-  "compatibility_date": "2026-11-20",
+  "compatibility_date": "2026-11-01",
   "upload_source_maps": true,
+  "build": {
+    "command": "npm run build"
+  },
   "observability": {
     "enabled": true
   },

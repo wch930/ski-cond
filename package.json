@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "cf:dev": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy",
+    "cf:dev": "wrangler dev",
+    "deploy": "wrangler deploy",
     "maps:sync": "python3 scripts/fetch_osm_ski_maps.py",
     "lint": "oxlint",
     "preview": "vite preview"
