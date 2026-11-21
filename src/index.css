@@ -1,0 +1,1504 @@
+/* ==========================================================================
+   POWDERLINE · Alpine Cartographic & Live Mountain Telemetry Design System
+   Pure Vanilla CSS · HSL Tokens · Tabular Numerals · Responsive Layout
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Glacial Daylight Palette (HSL) */
+  --bg-canvas: hsl(208, 28%, 96.5%);
+  --bg-canvas-accent: hsl(205, 38%, 93.5%);
+  --bg-surface: hsl(0, 0%, 100%);
+  --bg-subtle: hsl(208, 24%, 95%);
+  --bg-hover: hsl(206, 30%, 92.5%);
+  --bg-glass: hsla(0, 0%, 100%, 0.88);
+
+  /* Ink & Borders */
+  --ink-primary: hsl(214, 34%, 12%);
+  --ink-secondary: hsl(214, 18%, 36%);
+  --ink-muted: hsl(214, 14%, 52%);
+  --border-hairline: hsl(212, 20%, 88%);
+  --border-strong: hsl(212, 22%, 78%);
+
+  /* Functional Accents (Rockies Glacier Cerulean & Ski Patrol Signal Vermilion) */
+  --accent-alpine: hsl(203, 84%, 36%);
+  --accent-alpine-hover: hsl(203, 88%, 30%);
+  --accent-alpine-soft: hsl(203, 75%, 94%);
+  --accent-lift: hsl(18, 88%, 48%);
+  --accent-lift-soft: hsl(20, 92%, 94%);
+
+  /* Operational Status */
+  --status-open: hsl(154, 68%, 32%);
+  --status-open-bg: hsl(152, 60%, 93%);
+  --status-closed: hsl(214, 14%, 54%);
+  --status-closed-bg: hsl(212, 20%, 93%);
+  --status-groomed: hsl(199, 84%, 38%);
+  --status-groomed-bg: hsl(199, 80%, 93%);
+
+  /* North American Trail Difficulty Colors */
+  --diff-green: hsl(148, 68%, 35%);
+  --diff-blue: hsl(211, 84%, 46%);
+  --diff-black: hsl(215, 28%, 15%);
+  --diff-double: hsl(355, 76%, 47%);
+
+  /* Shadows & Radii */
+  --shadow-xs: 0 1px 2px hsla(214, 32%, 12%, 0.04);
+  --shadow-sm: 0 2px 8px -2px hsla(214, 32%, 12%, 0.07), 0 1px 3px hsla(214, 32%, 12%, 0.04);
+  --shadow-md: 0 10px 26px -6px hsla(214, 32%, 12%, 0.1), 0 2px 6px hsla(214, 32%, 12%, 0.05);
+  --shadow-lg: 0 18px 42px -10px hsla(214, 36%, 10%, 0.16);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --header-height: 62px;
+}
+
+[data-theme='dusk'] {
+  --bg-canvas: hsl(212, 32%, 9%);
+  --bg-canvas-accent: hsl(210, 34%, 12%);
+  --bg-surface: hsl(212, 28%, 13%);
+  --bg-subtle: hsl(212, 26%, 17%);
+  --bg-hover: hsl(211, 26%, 21%);
+  --bg-glass: hsla(212, 30%, 12%, 0.88);
+
+  --ink-primary: hsl(206, 30%, 95%);
+  --ink-secondary: hsl(208, 18%, 72%);
+  --ink-muted: hsl(210, 14%, 54%);
+  --border-hairline: hsl(212, 22%, 21%);
+  --border-strong: hsl(210, 22%, 30%);
+
+  --accent-alpine: hsl(199, 86%, 56%);
+  --accent-alpine-hover: hsl(199, 90%, 64%);
+  --accent-alpine-soft: hsla(199, 80%, 50%, 0.15);
+  --accent-lift: hsl(22, 94%, 56%);
+  --accent-lift-soft: hsla(22, 90%, 54%, 0.16);
+
+  --status-open: hsl(152, 64%, 46%);
+  --status-open-bg: hsla(152, 64%, 44%, 0.16);
+  --status-closed: hsl(210, 14%, 58%);
+  --status-closed-bg: hsla(210, 16%, 50%, 0.16);
+  --status-groomed: hsl(198, 86%, 58%);
+  --status-groomed-bg: hsla(198, 86%, 56%, 0.16);
+
+  --diff-green: hsl(148, 64%, 44%);
+  --diff-blue: hsl(208, 90%, 58%);
+  --diff-black: hsl(210, 20%, 88%);
+  --diff-double: hsl(355, 82%, 58%);
+
+  --shadow-xs: 0 1px 2px hsla(215, 50%, 4%, 0.35);
+  --shadow-sm: 0 4px 12px hsla(215, 50%, 4%, 0.42);
+  --shadow-md: 0 12px 28px hsla(215, 50%, 4%, 0.52);
+  --shadow-lg: 0 22px 48px hsla(215, 55%, 3%, 0.65);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  color: var(--ink-primary);
+  background-color: var(--bg-canvas);
+  background-image: radial-gradient(
+    ellipse 90% 45% at 50% -10%,
+    var(--bg-canvas-accent),
+    transparent 70%
+  );
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Top Navigation Bar
+   ========================================================================== */
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: var(--header-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.top-nav__inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.16s ease;
+}
+
+.brand-btn:hover {
+  opacity: 0.85;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: hsl(209, 62%, 16%);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 0.96rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-center::-webkit-scrollbar {
+  display: none;
+}
+
+.resort-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.resort-tab-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--ink-primary);
+  background: var(--bg-subtle);
+}
+
+.resort-tab-pill.is-active {
+  background: var(--ink-primary);
+  color: var(--bg-surface);
+  border-color: var(--ink-primary);
+}
+
+.resort-tab-pill__metric {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  opacity: 0.82;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.segmented-toggle {
+  display: inline-flex;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.segmented-toggle button {
+  border: none;
+  background: transparent;
+  padding: 4px 9px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  border-radius: 6px;
+  transition: all 0.14s ease;
+}
+
+.segmented-toggle button.is-active {
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  transition: all 0.15s ease;
+}
+
+.icon-btn:hover:not(:disabled) {
+  background: var(--bg-subtle);
+  color: var(--ink-primary);
+  border-color: var(--border-strong);
+}
+
+.icon-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Overview Page Container
+   ========================================================================== */
+
+.overview-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 20px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header & Region Bar */
+.hero-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.hero-bar__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.region-selector-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.region-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 600;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  transition: all 0.15s ease;
+}
+
+.region-chip.is-active {
+  background: var(--accent-alpine-soft);
+  border-color: hsla(203, 84%, 38%, 0.35);
+  color: var(--accent-alpine);
+}
+
+.region-chip.is-upcoming {
+  opacity: 0.68;
+  cursor: default;
+}
+
+.hero-h1 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+  max-width: 68ch;
+}
+
+/* Aggregate Telemetry Strip */
+.telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+
+.telemetry-cell {
+  padding: 13px 18px;
+  border-right: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.telemetry-cell:last-child {
+  border-right: none;
+}
+
+.telemetry-cell__label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.telemetry-cell__value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.telemetry-cell__sub {
+  font-size: 0.74rem;
+  color: var(--ink-secondary);
+}
+
+/* ==========================================================================
+   Resort Telemetry Cards Grid (SkiBig3)
+   ========================================================================== */
+
+.resorts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.resort-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.resort-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.resort-card__header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resort-card__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.status-badge.is-open {
+  background: var(--status-open-bg);
+  color: var(--status-open);
+}
+
+.status-badge.is-closed {
+  background: var(--status-closed-bg);
+  color: var(--status-closed);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.resort-card__elev {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+.resort-card__title {
+  margin: 0;
+  font-size: 1.24rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.resort-card__zh {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.resort-card__tagline {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+/* Primary 3-Column Metrics: Trails | Snow | Lifts */
+.resort-card__primary-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+}
+
+.primary-metric {
+  padding: 15px 14px;
+  border-right: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.primary-metric:last-child {
+  border-right: none;
+}
+
+.primary-metric__label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.primary-metric__number {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.48rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink-primary);
+}
+
+.primary-metric__denom {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.meter-track {
+  width: 100%;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--border-hairline);
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent-alpine);
+  transition: width 0.35s ease;
+}
+
+.meter-fill.is-lift {
+  background: var(--accent-lift);
+}
+
+.primary-metric__meta {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+/* Snow Depth Breakdown Row */
+.snow-depth-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 12px 16px;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.snow-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.snow-stat__label {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.snow-stat__val {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.snow-stat__val.is-highlight {
+  color: var(--accent-alpine);
+}
+
+/* Spinning Lifts + Weather Preview */
+.resort-card__body {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.open-lifts-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.open-lift-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--accent-lift-soft);
+  color: var(--accent-lift);
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.weather-mini-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 4px;
+  font-size: 0.79rem;
+  color: var(--ink-secondary);
+}
+
+.weather-mini-row__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resort-card__note {
+  margin: 0;
+  font-size: 0.77rem;
+  color: var(--ink-secondary);
+  line-height: 1.48;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.resort-card__footer {
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--bg-surface);
+}
+
+.updated-stamp {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+.cta-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--accent-alpine);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.resort-card:hover .cta-map-btn,
+.cta-map-btn:hover {
+  background: var(--accent-alpine-hover);
+}
+
+/* ==========================================================================
+   Banff National Park Regional Interactive Map Section
+   ========================================================================== */
+
+.regional-map-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.regional-map-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.regional-map-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.regional-map-header p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.regional-map-canvas {
+  position: relative;
+  width: 100%;
+  height: 410px;
+}
+
+/* Custom MapLibre Regional Resort Marker */
+.banff-resort-pin {
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  border: 1.5px solid var(--ink-primary);
+  border-radius: 11px;
+  padding: 8px 11px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  min-width: 162px;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.banff-resort-pin:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--accent-alpine);
+}
+
+.banff-resort-pin__name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.banff-resort-pin__stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-secondary);
+}
+
+.banff-resort-pin__snow {
+  color: var(--accent-alpine);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Resort Detail & Full Interactive Live Trail Map View
+   ========================================================================== */
+
+.detail-workspace {
+  height: calc(100vh - var(--header-height));
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--bg-canvas);
+}
+
+.detail-sidebar {
+  height: 100%;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.detail-sidebar__top {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back-link-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-alpine);
+}
+
+.back-link-btn:hover {
+  text-decoration: underline;
+}
+
+.detail-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.detail-title-row h1 {
+  margin: 0;
+  font-size: 1.22rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.detail-title-sub {
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+  margin-top: 2px;
+}
+
+.detail-quick-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: var(--bg-subtle);
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+}
+
+.mini-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mini-kpi__label {
+  font-size: 0.67rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.mini-kpi__val {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* Sidebar Tabs */
+.sidebar-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+  padding: 4px 12px 0;
+  gap: 4px;
+}
+
+.sidebar-tab {
+  border: none;
+  background: transparent;
+  padding: 9px 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  border-bottom: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.14s ease;
+}
+
+.sidebar-tab:hover {
+  color: var(--ink-primary);
+}
+
+.sidebar-tab.is-active {
+  color: var(--accent-alpine);
+  border-bottom-color: var(--accent-alpine);
+}
+
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 28px;
+}
+
+/* Search & Filter Toolbar inside Sidebar */
+.filter-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  color: var(--ink-muted);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  height: 36px;
+  padding: 0 30px 0 33px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--accent-alpine);
+  background: var(--bg-surface);
+}
+
+.filter-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  transition: all 0.14s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--ink-primary);
+}
+
+.filter-pill.is-active {
+  background: var(--ink-primary);
+  color: var(--bg-surface);
+  border-color: var(--ink-primary);
+}
+
+/* Lifts & Trails Directory Rows */
+.directory-group {
+  margin-bottom: 18px;
+}
+
+.directory-group__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  padding: 4px 2px 8px;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-bottom: 6px;
+}
+
+.directory-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: left;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.directory-row:hover {
+  background: var(--bg-subtle);
+}
+
+.directory-row.is-selected {
+  background: var(--accent-alpine-soft);
+  border-color: hsla(203, 84%, 38%, 0.4);
+}
+
+.directory-row__left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.directory-row__name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.directory-row__sub {
+  font-size: 0.71rem;
+  color: var(--ink-muted);
+}
+
+.directory-row__right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.groomed-chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--status-groomed-bg);
+  color: var(--status-groomed);
+}
+
+.row-status {
+  font-size: 0.71rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.row-status.is-open {
+  background: var(--status-open-bg);
+  color: var(--status-open);
+}
+
+.row-status.is-closed {
+  background: var(--status-closed-bg);
+  color: var(--status-closed);
+}
+
+/* Difficulty Badges */
+.diff-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.diff-circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--diff-green);
+}
+
+.diff-square {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  background: var(--diff-blue);
+}
+
+.diff-diamond {
+  width: 11px;
+  height: 11px;
+  background: var(--diff-black);
+  transform: rotate(45deg);
+}
+
+.diff-double {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.diff-double span {
+  width: 9px;
+  height: 9px;
+  background: var(--diff-double);
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Map Stage & Floating Telemetry HUD
+   ========================================================================== */
+
+.map-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: hsl(208, 25%, 90%);
+}
+
+.map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.map-hud-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 56px;
+  z-index: 8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.map-hud-group {
+  pointer-events: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hairline);
+  padding: 5px 7px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  transition: all 0.14s ease;
+}
+
+.hud-btn:hover {
+  background: var(--bg-hover);
+  color: var(--ink-primary);
+}
+
+.hud-btn.is-active {
+  background: var(--ink-primary);
+  color: var(--bg-surface);
+}
+
+/* Selected Trail / Lift Telemetry Card on Map */
+.map-feature-card {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  z-index: 9;
+  width: min(350px, calc(100% - 32px));
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-feature-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.map-feature-card__title {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-feature-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--ink-secondary);
+}
+
+/* Map Legend */
+.map-legend {
+  position: absolute;
+  bottom: 24px;
+  right: 16px;
+  z-index: 8;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 9px 12px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-line {
+  width: 18px;
+  height: 3.5px;
+  border-radius: 3px;
+}
+
+.legend-line.is-lift-open {
+  background: #ea580c;
+}
+
+.legend-line.is-closed-dash {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink-muted) 0,
+    var(--ink-muted) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* ==========================================================================
+   Snow Report & 7-Day Forecast Tab + Live Webcams
+   ========================================================================== */
+
+.panel-block {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.panel-block__title {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.snow-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.snow-detail-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+
+.snow-detail-item__label {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.snow-detail-item__val {
+  font-family: var(--font-mono);
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.forecast-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 68px 74px;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+}
+
+.forecast-snow-badge {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-align: right;
+  color: var(--accent-alpine);
+}
+
+.webcam-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.webcam-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.webcam-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-hover);
+}
+
+.webcam-card__caption {
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Mobile View Switcher in Detail Mode */
+.mobile-view-switch {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+  .resorts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .detail-workspace {
+    grid-template-columns: 360px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .telemetry-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .telemetry-cell:nth-child(2) {
+    border-right: none;
+  }
+  .telemetry-cell:nth-child(1),
+  .telemetry-cell:nth-child(2) {
+    border-bottom: 1px solid var(--border-hairline);
+  }
+  .resorts-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-center {
+    display: none;
+  }
+
+  .detail-workspace {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .detail-sidebar,
+  .map-stage {
+    width: 100%;
+    height: 100%;
+  }
+  .detail-workspace[data-mobile-pane='map'] .detail-sidebar {
+    display: none;
+  }
+  .detail-workspace[data-mobile-pane='list'] .map-stage {
+    display: none;
+  }
+  .mobile-view-switch {
+    display: flex;
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 35;
+    background: var(--ink-primary);
+    color: var(--bg-surface);
+    border-radius: var(--radius-pill);
+    padding: 4px;
+    box-shadow: var(--shadow-lg);
+  }
+  .mobile-view-switch button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    padding: 7px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .mobile-view-switch button.is-active {
+    background: var(--accent-alpine);
+    color: #fff;
+  }
+}

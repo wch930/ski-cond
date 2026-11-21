@@ -1,0 +1,3745 @@
+{
+  "fetchedAt": "2026-11-21T03:35:43.924Z",
+  "source": "live-official-feeds",
+  "regions": [
+    {
+      "id": "banff",
+      "name": "Banff National Park · SkiBig3",
+      "nameZh": "班夫国家公园 · SkiBig3",
+      "province": "Alberta, Canada",
+      "active": true,
+      "center": [
+        -115.88,
+        51.26
+      ],
+      "zoom": 9.2
+    },
+    {
+      "id": "kananaskis-jasper",
+      "name": "Kananaskis & Jasper",
+      "nameZh": "卡纳纳斯基斯 & 贾斯珀 (即将接入)",
+      "province": "Alberta, Canada",
+      "active": false
+    },
+    {
+      "id": "powder-highway",
+      "name": "BC Powder Highway",
+      "nameZh": "BC 粉雪公路 · Revy / KH (即将接入)",
+      "province": "British Columbia, Canada",
+      "active": false
+    }
+  ],
+  "resorts": [
+    {
+      "id": "sunshine",
+      "regionId": "banff",
+      "name": "Banff Sunshine Village",
+      "nameZh": "班夫阳光村滑雪场",
+      "shortName": "Sunshine Village",
+      "tagline": "加拿大全天然粉雪标杆 · 横跨大陆分水岭三座雪峰",
+      "taglineEn": "100% Natural Rocky Mountain Powder across 3 Peaks on the Continental Divide",
+      "coordinates": [
+        -115.782,
+        51.079
+      ],
+      "mapViewport": {
+        "center": [
+          -115.781,
+          51.084
+        ],
+        "zoom": 13.4,
+        "pitch": 48,
+        "bearing": -145
+      },
+      "elevationBaseM": 1660,
+      "elevationSummitM": 2730,
+      "verticalDropM": 1070,
+      "skiableAcres": 3358,
+      "distanceFromBanffKm": 15,
+      "driveMinutesFromBanff": 18,
+      "officialUrl": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
+      "geojsonUrl": "/geojson/sunshine.geojson",
+      "webcams": [
+        {
+          "id": "ss-standish",
+          "title": "Mount Standish 山顶视角",
+          "url": "https://cameras.skibanff.com/dynamic/10m"
+        },
+        {
+          "id": "ss-lookout",
+          "title": "Lookout Mountain 大陆分水岭",
+          "url": "https://cameras.skibanff.com/dynamic/14m"
+        },
+        {
+          "id": "ss-goats",
+          "title": "Goat's Eye 陡坡视角",
+          "url": "https://cameras.skibanff.com/dynamic/15m"
+        },
+        {
+          "id": "ss-village",
+          "title": "Village 阳光村大本营",
+          "url": "https://cameras.skibanff.com/dynamic/17m"
+        }
+      ],
+      "status": "open",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 18,
+        "baseCm": 28,
+        "upperBaseCm": 28,
+        "seasonCm": 63,
+        "forecast7dCm": 0
+      },
+      "terrain": {
+        "runsOpen": 8,
+        "runsTotal": 139,
+        "runsOpenPct": 6,
+        "groomedCount": 4,
+        "liftsOpen": 3,
+        "liftsTotal": 12,
+        "liftsOpenPct": 25
+      },
+      "weather": {
+        "tempCurrentC": -12.6,
+        "tempSummitC": -13.3,
+        "tempBaseC": -8.9,
+        "tempHighC": -8,
+        "feelsLikeC": -18,
+        "windKmh": 11,
+        "windGustKmh": 19,
+        "weatherCode": 0,
+        "summary": "Partly Cloudy",
+        "dailyForecast": [
+          {
+            "date": "2026-11-20",
+            "weatherCode": 3,
+            "tempMaxC": -8,
+            "tempMinC": -14,
+            "snowCm": 0,
+            "windMaxKmh": 14
+          },
+          {
+            "date": "2026-11-21",
+            "weatherCode": 0,
+            "tempMaxC": -12,
+            "tempMinC": -16,
+            "snowCm": 0,
+            "windMaxKmh": 16
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 0,
+            "tempMaxC": -9,
+            "tempMinC": -17,
+            "snowCm": 0,
+            "windMaxKmh": 14
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 3,
+            "tempMaxC": -8,
+            "tempMinC": -16,
+            "snowCm": 0,
+            "windMaxKmh": 9
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 45,
+            "tempMaxC": -7,
+            "tempMinC": -14,
+            "snowCm": 0,
+            "windMaxKmh": 10
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 45,
+            "tempMaxC": -5,
+            "tempMinC": -12,
+            "snowCm": 0,
+            "windMaxKmh": 11
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 45,
+            "tempMaxC": -5,
+            "tempMinC": -10,
+            "snowCm": 0,
+            "windMaxKmh": 9
+          }
+        ]
+      },
+      "notes": "Snowsnake and lower Strawberry Face are open! Hop on Strawberry Express, carve a few turns down Snowsnake’s groomed centre, then cut across to lower Strawberry Face. The new terrain also includes lower Slush Cup, plus Boutry’s Bowl and Strawberry Surprise, both with marginal coverage. Mix in a lap on Dell Valley or try a feature in the rail park on lower Strawberry. Just getting started? Head to the Mitey Mite learning area for your first turns.",
+      "lastUpdated": "2026-11-20 19:01:17 MT",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "Goat's Eye Express Quad",
+          "normName": "goatseye",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Gondola",
+          "normName": "gondola",
+          "status": "open",
+          "hours": "8:00am-5:30pm",
+          "liftType": "gondola",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Great Divide Express Quad",
+          "normName": "greatdivide",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Jackrabbit Fixed Grip Quad",
+          "normName": "jackrabbit",
+          "status": "closed",
+          "hours": "9:00am-4:30pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Mitey Mite Conveyor",
+          "normName": "miteymite",
+          "status": "open",
+          "hours": "9:00am-4:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Standish Express Quad",
+          "normName": "standish",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Strawberry Express Quad",
+          "normName": "strawberry",
+          "status": "open",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Super Angel Luxury Express Six Pack",
+          "normName": "superangel",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Teepee Town Luxury Express Quad",
+          "normName": "teepeetown",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Tiny Tigers Conveyor",
+          "normName": "tinytigers",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Wawa Fixed Grip Quad",
+          "normName": "wawa",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        },
+        {
+          "name": "Wolverine Express Quad",
+          "normName": "wolverine",
+          "status": "closed",
+          "hours": "9:00am-4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Sunshine Village"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Banff Ave",
+          "normName": "banffave",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Cayuse Creek",
+          "normName": "cayusecreek",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Corral Cut-off",
+          "normName": "corralcutoff",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Cottontail",
+          "normName": "cottontail",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Forget Me Not",
+          "normName": "forgetmenot",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Juniper",
+          "normName": "juniper",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Kid's Play",
+          "normName": "kidsplay",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Kid's Play Terrain Park",
+          "normName": "kidsplayterrainpark",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Larch Glade",
+          "normName": "larchglade",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Miss Gratz",
+          "normName": "missgratz",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Powerline",
+          "normName": "powerline",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "B-Line",
+          "normName": "bline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Bluebell",
+          "normName": "bluebell",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Chicken",
+          "normName": "chicken",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Christmas Tree",
+          "normName": "christmastree",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Eagle",
+          "normName": "eagle",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Lower Canyon",
+          "normName": "lowercanyon",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Raptor",
+          "normName": "raptor",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Roller Coaster",
+          "normName": "rollercoaster",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Scapegoat",
+          "normName": "scapegoat",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Sergie's Shortcut",
+          "normName": "sergiesshortcut",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Short and Sweet",
+          "normName": "shortandsweet",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Stampeders Way",
+          "normName": "stampedersway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Sunshine Coast",
+          "normName": "sunshinecoast",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Upper Canyon",
+          "normName": "uppercanyon",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wildfire",
+          "normName": "wildfire",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wolverine",
+          "normName": "wolverine",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Afterburner",
+          "normName": "afterburner",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Cleavage",
+          "normName": "cleavage",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Eagle Creek",
+          "normName": "eaglecreek",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Ewe First",
+          "normName": "ewefirst",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Fall Line",
+          "normName": "fallline",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Fire Weed",
+          "normName": "fireweed",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Gladerunner",
+          "normName": "gladerunner",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Goat Chicken Glade",
+          "normName": "goatchickenglade",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Goat Chicken Gully",
+          "normName": "goatchickengully",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Goat Sucker Glade",
+          "normName": "goatsuckerglade",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Goat's Head Soup",
+          "normName": "goatsheadsoup",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Jackrabbit",
+          "normName": "jackrabbit",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Middle Canyon",
+          "normName": "middlecanyon",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Mother In Law",
+          "normName": "motherinlaw",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Rolling Thunder",
+          "normName": "rollingthunder",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Sasquatch",
+          "normName": "sasquatch",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Sky Dive",
+          "normName": "skydive",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Supermodel",
+          "normName": "supermodel",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "The Big Woody",
+          "normName": "bigwoody",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Tower 30",
+          "normName": "tower30",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Trapper's Trail",
+          "normName": "trapperstrail",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wolverine Liftline",
+          "normName": "wolverineliftline",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Eagle Glades",
+          "normName": "eagleglades",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Farside",
+          "normName": "farside",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Freefall",
+          "normName": "freefall",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Hell's Kitchen",
+          "normName": "hellskitchen",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Renegade",
+          "normName": "renegade",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Stampede",
+          "normName": "stampede",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Think Again",
+          "normName": "thinkagain",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wild West",
+          "normName": "wildwest",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wildside",
+          "normName": "wildside",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Assiniboine Trail",
+          "normName": "assiniboinetrail",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Green Run",
+          "normName": "greenrun",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Grizzly",
+          "normName": "grizzly",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Packers",
+          "normName": "packers",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Pilgrims",
+          "normName": "pilgrims",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Slush Cup",
+          "normName": "slushcup",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "The Yellowhead",
+          "normName": "yellowhead",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Barners",
+          "normName": "barners",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Boutry's Bowl",
+          "normName": "boutrysbowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Bronze Ecstasy",
+          "normName": "bronzeecstasy",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Cherub",
+          "normName": "cherub",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Highway One",
+          "normName": "highwayone",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Red 90",
+          "normName": "red90",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "South Divide",
+          "normName": "southdivide",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Springhill Terrain Park",
+          "normName": "springhillterrainpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "World Cup Downhill",
+          "normName": "worldcupdownhill",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Yellowhead North",
+          "normName": "yellowheadnorth",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Angel Flight",
+          "normName": "angelflight",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Big Angel",
+          "normName": "bigangel",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Boundary Bowl",
+          "normName": "boundarybowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Bushwackers",
+          "normName": "bushwackers",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Bye Bye Bowl",
+          "normName": "byebyebowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Divide Terrain Park",
+          "normName": "divideterrainpark",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Gold Ecstasy",
+          "normName": "goldecstasy",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Horto's Revenge",
+          "normName": "hortosrevenge",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Little Angel",
+          "normName": "littleangel",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "N. Pocket",
+          "normName": "npocket",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "North Divide",
+          "normName": "northdivide",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "OS Pitch",
+          "normName": "ospitch",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Piste Noir",
+          "normName": "pistenoir",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Rock Ledges",
+          "normName": "rockledges",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "S. Pocket",
+          "normName": "spocket",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Schoolmarm",
+          "normName": "schoolmarm",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Silver Ecstasy",
+          "normName": "silverecstasy",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "South 205",
+          "normName": "south205",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Teepee Town Liftline",
+          "normName": "teepeetownliftline",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "The Shoulder",
+          "normName": "shoulder",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "TP Main Chutes",
+          "normName": "tpmainchutes",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Viking Ridge",
+          "normName": "vikingridge",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Delirium Dive",
+          "normName": "deliriumdive",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Grizzly Terrain Park",
+          "normName": "grizzlyterrainpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Angel Gully",
+          "normName": "angelgully",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Borderline",
+          "normName": "borderline",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Creek Run",
+          "normName": "creekrun",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Meadow Park",
+          "normName": "meadowpark",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Mitey Mite Learning Area",
+          "normName": "miteymitelearningarea",
+          "difficulty": "green",
+          "groomed": true,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Prune Pickers Pass",
+          "normName": "prunepickerspass",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Rock Isle Road",
+          "normName": "rockisleroad",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Springhill",
+          "normName": "springhill",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "The Dell Valley",
+          "normName": "dellvalley",
+          "difficulty": "green",
+          "groomed": true,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Tiny Tigers Learning Area",
+          "normName": "tinytigerslearningarea",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Bunkers",
+          "normName": "bunkers",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Little Bunkers",
+          "normName": "littlebunkers",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Snowsnake",
+          "normName": "snowsnake",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Strawberry Face",
+          "normName": "strawberryface",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Strawberry Surprise",
+          "normName": "strawberrysurprise",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Strawberry Terrain Park",
+          "normName": "strawberryterrainpark",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Tilton Trail",
+          "normName": "tiltontrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Tin Can Alley",
+          "normName": "tincanalley",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Wawa Bowl",
+          "normName": "wawabowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Big Bunkers",
+          "normName": "bigbunkers",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Birdcage",
+          "normName": "birdcage",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Dirty Little Corner",
+          "normName": "dirtylittlecorner",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Donkey's Tail",
+          "normName": "donkeystail",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Garbage Chutes",
+          "normName": "garbagechutes",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Headwall",
+          "normName": "headwall",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Jerry's Run",
+          "normName": "jerrysrun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Laryx",
+          "normName": "laryx",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Old T-Bar",
+          "normName": "old",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Paris Basin",
+          "normName": "parisbasin",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Paris One",
+          "normName": "parisone",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Paris Two",
+          "normName": "paristwo",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Shaken Not Stirred",
+          "normName": "shakennotstirred",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Showboat",
+          "normName": "showboat",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Sidewall",
+          "normName": "sidewall",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Standish",
+          "normName": "standish",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Standish Face",
+          "normName": "standishface",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Star Trek",
+          "normName": "startrek",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "The Waterfall",
+          "normName": "waterfall",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Tin Can Trees",
+          "normName": "tincantrees",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        },
+        {
+          "name": "Virgins",
+          "normName": "virgins",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Lookout & Village"
+        }
+      ]
+    },
+    {
+      "id": "lakelouise",
+      "regionId": "banff",
+      "name": "Lake Louise Ski Resort",
+      "nameZh": "露易丝湖滑雪场",
+      "shortName": "Lake Louise",
+      "tagline": "4,200 英亩四面环山巨型地形 · 世界级冰川全景雪场",
+      "taglineEn": "4,200 Acres across Four Mountain Faces with Iconic Glacier Views",
+      "coordinates": [
+        -116.162,
+        51.444
+      ],
+      "mapViewport": {
+        "center": [
+          -116.142,
+          51.456
+        ],
+        "zoom": 13.1,
+        "pitch": 48,
+        "bearing": 28
+      },
+      "elevationBaseM": 1646,
+      "elevationSummitM": 2637,
+      "verticalDropM": 991,
+      "skiableAcres": 4200,
+      "distanceFromBanffKm": 58,
+      "driveMinutesFromBanff": 42,
+      "officialUrl": "https://www.skilouise.com/snow-conditions/",
+      "geojsonUrl": "/geojson/lakelouise.geojson",
+      "webcams": [
+        {
+          "id": "ll-base",
+          "title": "Base Area 缆车大本营",
+          "url": "https://cams.skilouise.com/cam2.jpg"
+        },
+        {
+          "id": "ll-glacier",
+          "title": "Whitehorn / Glacier 山腰",
+          "url": "https://cams.skilouise.com/cam3.jpg"
+        },
+        {
+          "id": "ll-ptarmigan",
+          "title": "Ptarmigan 远眺露易丝湖谷地",
+          "url": "https://cams.skilouise.com/cam6.jpg"
+        },
+        {
+          "id": "ll-larch",
+          "title": "Larch / Temple 后山碗区",
+          "url": "https://cams.skilouise.com/cam8.jpg"
+        }
+      ],
+      "status": "open",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 10,
+        "baseCm": 23,
+        "upperBaseCm": 28,
+        "seasonCm": 44,
+        "forecast7dCm": 0.4
+      },
+      "terrain": {
+        "runsOpen": 6,
+        "runsTotal": 164,
+        "runsOpenPct": 4,
+        "groomedCount": 5,
+        "liftsOpen": 4,
+        "liftsTotal": 11,
+        "liftsOpenPct": 36
+      },
+      "weather": {
+        "tempCurrentC": -11,
+        "tempSummitC": -15.9,
+        "tempBaseC": -11.1,
+        "tempHighC": -11,
+        "feelsLikeC": -21,
+        "windKmh": 8,
+        "windGustKmh": 9,
+        "weatherCode": 2,
+        "summary": "Cold & Crisp Alpine Snow",
+        "dailyForecast": [
+          {
+            "date": "2026-11-20",
+            "weatherCode": 3,
+            "tempMaxC": -10,
+            "tempMinC": -18,
+            "snowCm": 0,
+            "windMaxKmh": 15
+          },
+          {
+            "date": "2026-11-21",
+            "weatherCode": 1,
+            "tempMaxC": -12,
+            "tempMinC": -21,
+            "snowCm": 0,
+            "windMaxKmh": 6
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 0,
+            "tempMaxC": -11,
+            "tempMinC": -21,
+            "snowCm": 0,
+            "windMaxKmh": 7
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 3,
+            "tempMaxC": -10,
+            "tempMinC": -20,
+            "snowCm": 0,
+            "windMaxKmh": 8
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 3,
+            "tempMaxC": -8,
+            "tempMinC": -18,
+            "snowCm": 0,
+            "windMaxKmh": 8
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 45,
+            "tempMaxC": -7,
+            "tempMinC": -15,
+            "snowCm": 0,
+            "windMaxKmh": 8
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 71,
+            "tempMaxC": -6,
+            "tempMinC": -12,
+            "snowCm": 0.4,
+            "windMaxKmh": 7
+          }
+        ]
+      },
+      "notes": "Grizzly Gondola is now open with access to Deer Run and Lower Flight (both are rated blue at this time). Glacier Chair, Juniper Chair and the Magic Carpet are also open, with 6 runs open across the resort. More terrain will open as conditions allow.",
+      "lastUpdated": "November 20, 2026 5:10 am MT",
+      "dailyRunReportPdf": "https://lamp10.skilouise.com/conditions/run_report.pdf",
+      "dailyGroomingPdf": "https://lamp10.skilouise.com/conditions/grooming_report.pdf",
+      "lifts": [
+        {
+          "name": "Grizzly Express Gondola",
+          "normName": "grizzly",
+          "status": "open",
+          "hours": "8:30am - 4:00pm",
+          "liftType": "gondola",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Glacier Express Quad",
+          "normName": "glacier",
+          "status": "open",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Juniper Express Quad",
+          "normName": "juniper",
+          "status": "open",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Sunny Side Magic Carpet",
+          "normName": "sunnysidemagic",
+          "status": "open",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Base & Learning"
+        },
+        {
+          "name": "Top of the World Express",
+          "normName": "topofworld",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Front Side Upper"
+        },
+        {
+          "name": "Summit Chair",
+          "normName": "summit",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Summit & Back Bowls"
+        },
+        {
+          "name": "Ptarmigan Quad",
+          "normName": "ptarmigan",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Back Bowls & Ptarmigan"
+        },
+        {
+          "name": "Paradise Triple",
+          "normName": "paradisetriple",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Paradise Bowl"
+        },
+        {
+          "name": "Larch Express Quad",
+          "normName": "larch",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Pipestone Express",
+          "normName": "pipestone",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Richardson's Ridge Express",
+          "normName": "richardsonsridge",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Richardson's Ridge"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Bald Eagle",
+          "normName": "baldeagle",
+          "difficulty": "green",
+          "groomed": true,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Deer Run",
+          "normName": "deerrun",
+          "difficulty": "green",
+          "groomed": true,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Easy Street",
+          "normName": "easystreet",
+          "difficulty": "green",
+          "groomed": true,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Juniper",
+          "normName": "juniper",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Lower Flight",
+          "normName": "lowerflight",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper Wiwaxy",
+          "normName": "upperwiwaxy",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "open",
+          "zone": "Front Side"
+        },
+        {
+          "name": "\"007\" Ptarmigan Cat Track",
+          "normName": "007ptarmigancattrack",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "166 Doughnut Plains",
+          "normName": "166doughnutplains",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "30 Goats",
+          "normName": "30goats",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "4/5 Shoulder",
+          "normName": "45shoulder",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "A Gully",
+          "normName": "agully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Alley",
+          "normName": "alley",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "B Gully",
+          "normName": "bgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Bearberry",
+          "normName": "bearberry",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Big 7",
+          "normName": "big7",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Blueberry",
+          "normName": "blueberry",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Bobcat",
+          "normName": "bobcat",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Boomerang",
+          "normName": "boomerang",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Boundary Bowl",
+          "normName": "boundarybowl",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Brown Cow",
+          "normName": "browncow",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Brown Cow 1st",
+          "normName": "browncow1st",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Brown Cow Main",
+          "normName": "browncowmain",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Buffaloberry",
+          "normName": "buffaloberry",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Bunchberry",
+          "normName": "bunchberry",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "C Gully",
+          "normName": "cgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Cameron's Way",
+          "normName": "cameronsway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Charlie's Choice",
+          "normName": "charlieschoice",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Corridor",
+          "normName": "corridor",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Couloir",
+          "normName": "couloir",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Cowboy",
+          "normName": "cowboy",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Crow Bowl",
+          "normName": "crowbowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "D Gully",
+          "normName": "dgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Drop Out",
+          "normName": "dropout",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "E Gully",
+          "normName": "egully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "E.R. 3",
+          "normName": "er3",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "E.R. 6",
+          "normName": "er6",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Eagle Meadows",
+          "normName": "eaglemeadows",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Eagle Poma",
+          "normName": "eaglepoma",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Eagles Beak",
+          "normName": "eaglesbeak",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Eagles Flight",
+          "normName": "eaglesflight",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "East Bowl",
+          "normName": "eastbowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Egress",
+          "normName": "egress",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Enchanted Forest",
+          "normName": "enchantedforest",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Exhibition",
+          "normName": "exhibition",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Exhibition Trees",
+          "normName": "exhibitiontrees",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "F Gully",
+          "normName": "fgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Fenceline Gully",
+          "normName": "fencelinegully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Flight Chutes 1",
+          "normName": "flightchutes1",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Flight Chutes 2",
+          "normName": "flightchutes2",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Flight Chutes Cat Track",
+          "normName": "flightchutescattrack",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Forth Gate",
+          "normName": "forthgate",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Fossil",
+          "normName": "fossil",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Free Spirit",
+          "normName": "freespirit",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "G Gully",
+          "normName": "ggully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Ghostly Gully",
+          "normName": "ghostlygully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Gully",
+          "normName": "gully",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "H Gully",
+          "normName": "hgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Headwall",
+          "normName": "headwall",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Headwall Bowl",
+          "normName": "headwallbowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Helen's",
+          "normName": "helens",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Home Run",
+          "normName": "homerun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Home Run Chutes",
+          "normName": "homerunchutes",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Hour Glass",
+          "normName": "hourglass",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "I Gully",
+          "normName": "igully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Instructor's Bowl",
+          "normName": "instructorsbowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Instructor's Gully",
+          "normName": "instructorsgully",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Jackpot",
+          "normName": "jackpot",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Jerry's Jungle",
+          "normName": "jerrysjungle",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Juniper Jungle",
+          "normName": "juniperjungle",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Kiddies' Corner",
+          "normName": "kiddiescorner",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Ladies' Downhill",
+          "normName": "ladiesdownhill",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Lake Pitch",
+          "normName": "lakepitch",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Larch",
+          "normName": "larch",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Larch Poma",
+          "normName": "larchpoma",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Larch Poma to Larch Connector",
+          "normName": "larchpomatolarchconnector",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Lipalian Chutes",
+          "normName": "lipalianchutes",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Little Pipestone",
+          "normName": "littlepipestone",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Lookout",
+          "normName": "lookout",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Lookout Chutes",
+          "normName": "lookoutchutes",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Lower 5",
+          "normName": "lower5",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Lower Meadowlark",
+          "normName": "lowermeadowlark",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Lynx",
+          "normName": "lynx",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Maitenance Gully",
+          "normName": "maitenancegully",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Marmot",
+          "normName": "marmot",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Marmot to Lookout connector",
+          "normName": "marmottolookoutconnector",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Maverick",
+          "normName": "maverick",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Meadowlark",
+          "normName": "meadowlark",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Men's Downhill",
+          "normName": "mensdownhill",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Merlin",
+          "normName": "merlin",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Middle Limits",
+          "normName": "middlelimits",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "North Cornice",
+          "normName": "northcornice",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Old Ptarmigan",
+          "normName": "oldptarmigan",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Oly Slides East",
+          "normName": "olyslideseast",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Oly Slides West",
+          "normName": "olyslideswest",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Outback",
+          "normName": "outback",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Outer Limits",
+          "normName": "outerlimits",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Paradise Bowl",
+          "normName": "paradisebowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Paradise Cornice",
+          "normName": "paradisecornice",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Peyto's Pitch",
+          "normName": "peytospitch",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Pika",
+          "normName": "pika",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Pika Trees",
+          "normName": "pikatrees",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Pine Cone Way",
+          "normName": "pineconeway",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Pipestone Ridge",
+          "normName": "pipestoneridge",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Powder Pockets",
+          "normName": "powderpockets",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Ptarmigan",
+          "normName": "ptarmigan",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Ptarmigan Chute 1",
+          "normName": "ptarmiganchute1",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Ptarmigan Chute 2",
+          "normName": "ptarmiganchute2",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Ptarmigan Chute 3",
+          "normName": "ptarmiganchute3",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Ptarmigan Glades",
+          "normName": "ptarmiganglades",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Ptarmigan"
+        },
+        {
+          "name": "Race Pitch",
+          "normName": "racepitch",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Raven",
+          "normName": "raven",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Reads' Way",
+          "normName": "readsway",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Redoubt",
+          "normName": "redoubt",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Ridge Run",
+          "normName": "ridgerun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Rock Garden",
+          "normName": "rockgarden",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Rodney's Ridge",
+          "normName": "rodneysridge",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Saddleback Bowl",
+          "normName": "saddlebackbowl",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Second Gate",
+          "normName": "secondgate",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Shoulder Roll",
+          "normName": "shoulderroll",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Ski Out",
+          "normName": "skiout",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Skoki",
+          "normName": "skoki",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Skyline",
+          "normName": "skyline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Split Rock",
+          "normName": "splitrock",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Steep & Flat",
+          "normName": "steepandflat",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Sunny Side",
+          "normName": "sunnyside",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Sunset",
+          "normName": "sunset",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Sunset Gully",
+          "normName": "sunsetgully",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Sunset Pocket",
+          "normName": "sunsetpocket",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Sunset Terrace",
+          "normName": "sunsetterrace",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Swede's",
+          "normName": "swedes",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Temple",
+          "normName": "temple",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Ten Peaks",
+          "normName": "tenpeaks",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "The Beast",
+          "normName": "beast",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "The Heart",
+          "normName": "heart",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Third Gate",
+          "normName": "thirdgate",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Tickety Chute",
+          "normName": "ticketychute",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Tight Turn",
+          "normName": "tightturn",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Tower 12",
+          "normName": "tower12",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Two Thirds Shoulder",
+          "normName": "twothirdsshoulder",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "UNC",
+          "normName": "unc",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper 5",
+          "normName": "upper5",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper Boomerang",
+          "normName": "upperboomerang",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Upper Grouse",
+          "normName": "uppergrouse",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper Juniper",
+          "normName": "upperjuniper",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper Kiddies'",
+          "normName": "upperkiddies",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upper Meadowlark",
+          "normName": "uppermeadowlark",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Upshoots",
+          "normName": "upshoots",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Vermillion",
+          "normName": "vermillion",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Vertical Cornice",
+          "normName": "verticalcornice",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Paradise & Back Bowls"
+        },
+        {
+          "name": "Wapta",
+          "normName": "wapta",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Warden's Run",
+          "normName": "wardensrun",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "West Bowl",
+          "normName": "westbowl",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "West Bowl Gully",
+          "normName": "westbowlgully",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "White Rabbit",
+          "normName": "whiterabbit",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Whitehorn 1",
+          "normName": "whitehorn1",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Whitehorn Cat Track",
+          "normName": "whitehorncattrack",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Wild Gully",
+          "normName": "wildgully",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Back Bowls & Whitehorn"
+        },
+        {
+          "name": "Wiwaxy",
+          "normName": "wiwaxy",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Wolverine",
+          "normName": "wolverine",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Larch Area"
+        },
+        {
+          "name": "Wounded Knee",
+          "normName": "woundedknee",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
+          "name": "Wrong Turn",
+          "normName": "wrongturn",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        }
+      ]
+    },
+    {
+      "id": "norquay",
+      "regionId": "banff",
+      "name": "Mt. Norquay",
+      "nameZh": "诺奎山滑雪场",
+      "shortName": "Mt. Norquay",
+      "tagline": "距班夫镇仅 10 分钟车程 · 传奇陡坡与班夫唯一夜滑",
+      "taglineEn": "Banff Town’s Backyard Hill · 10 Minutes from Downtown & Night Skiing",
+      "coordinates": [
+        -115.601,
+        51.203
+      ],
+      "mapViewport": {
+        "center": [
+          -115.603,
+          51.203
+        ],
+        "zoom": 14.3,
+        "pitch": 46,
+        "bearing": -110
+      },
+      "elevationBaseM": 1630,
+      "elevationSummitM": 2133,
+      "verticalDropM": 503,
+      "skiableAcres": 190,
+      "distanceFromBanffKm": 6,
+      "driveMinutesFromBanff": 10,
+      "officialUrl": "https://banffnorquay.com/conditions/",
+      "geojsonUrl": "/geojson/norquay.geojson",
+      "webcams": [
+        {
+          "id": "nq-cascade",
+          "title": "Cascade 雪道实时画面",
+          "url": "https://banffnorquay.com/webcam-images/winter/CascadeCam/cascade.jpg"
+        },
+        {
+          "id": "nq-sundance",
+          "title": "Sundance 初学者雪区",
+          "url": "https://banffnorquay.com/webcam-images/winter/SundanceCam/sundance.jpg"
+        },
+        {
+          "id": "nq-banff",
+          "title": "俯瞰班夫镇与朗德尔山",
+          "url": "https://banffnorquay.com/webcam-images/winter/BanffCam/banffcam.jpg"
+        },
+        {
+          "id": "nq-tube",
+          "title": "Tube Park 雪圈公园",
+          "url": "https://banffnorquay.com/webcam-images/winter/TubeParkCam/tubepark.jpg"
+        }
+      ],
+      "status": "open",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 8,
+        "baseCm": 30,
+        "upperBaseCm": 35,
+        "seasonCm": 35,
+        "forecast7dCm": 0
+      },
+      "terrain": {
+        "runsOpen": 2,
+        "runsTotal": 80,
+        "runsOpenPct": 3,
+        "groomedCount": 2,
+        "liftsOpen": 2,
+        "liftsTotal": 7,
+        "liftsOpenPct": 29
+      },
+      "weather": {
+        "tempCurrentC": -7,
+        "tempSummitC": -12,
+        "tempBaseC": -9.5,
+        "tempHighC": -7,
+        "feelsLikeC": -17,
+        "windKmh": 9,
+        "windGustKmh": 16,
+        "weatherCode": 1,
+        "summary": "Crisp Alpine Conditions",
+        "dailyForecast": [
+          {
+            "date": "2026-11-20",
+            "weatherCode": 3,
+            "tempMaxC": -7,
+            "tempMinC": -13,
+            "snowCm": 0,
+            "windMaxKmh": 14
+          },
+          {
+            "date": "2026-11-21",
+            "weatherCode": 45,
+            "tempMaxC": -11,
+            "tempMinC": -17,
+            "snowCm": 0,
+            "windMaxKmh": 13
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 3,
+            "tempMaxC": -9,
+            "tempMinC": -18,
+            "snowCm": 0,
+            "windMaxKmh": 7
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 3,
+            "tempMaxC": -5,
+            "tempMinC": -14,
+            "snowCm": 0,
+            "windMaxKmh": 10
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 3,
+            "tempMaxC": -5,
+            "tempMinC": -13,
+            "snowCm": 0,
+            "windMaxKmh": 10
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 3,
+            "tempMaxC": -2,
+            "tempMinC": -11,
+            "snowCm": 0,
+            "windMaxKmh": 12
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 3,
+            "tempMaxC": -2,
+            "tempMinC": -8,
+            "snowCm": 0,
+            "windMaxKmh": 10
+          }
+        ]
+      },
+      "notes": "We have 2 runs open, Cascade and Sundance, with a 30–35 cm base. Lifts run 9:30 a.m.–4:30 p.",
+      "lastUpdated": "2026-11-21T03:35:42.978Z",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "North American Chair",
+          "normName": "northamerican",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "North American"
+        },
+        {
+          "name": "Spirit Chair",
+          "normName": "spirit",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Spirit"
+        },
+        {
+          "name": "Sundance Carpet",
+          "normName": "sundance",
+          "status": "open",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Sundance Carpet"
+        },
+        {
+          "name": "Cascade Chair",
+          "normName": "cascade",
+          "status": "open",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Cascade"
+        },
+        {
+          "name": "Mystic Chair",
+          "normName": "mystic",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "chair_lift",
+          "zone": "Mystic"
+        },
+        {
+          "name": "Rundle Carpet",
+          "normName": "rundle",
+          "status": "closed",
+          "hours": "9:00am - 4:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Rundle Carpet"
+        }
+      ],
+      "trails": [
+        {
+          "name": "North American",
+          "normName": "northamerican",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Memorial Bowl",
+          "normName": "memorialbowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "The Lone Pine",
+          "normName": "lonepine",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Boundary Bowl",
+          "normName": "boundarybowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Corvids",
+          "normName": "corvids",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Waterfall",
+          "normName": "waterfall",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Boundary Line",
+          "normName": "boundaryline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Roger's Shot",
+          "normName": "rogersshot",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "The Chute",
+          "normName": "chute",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Henderson's Turn",
+          "normName": "hendersonsturn",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Robinson's Return",
+          "normName": "robinsonsreturn",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Widowmaker",
+          "normName": "widowmaker",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Big Line",
+          "normName": "bigline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "T10 Pitch",
+          "normName": "t10pitch",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Rudy's Alley",
+          "normName": "rudysalley",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "LPE",
+          "normName": "lpe",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Tunnel Traverse",
+          "normName": "tunneltraverse",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Memorial Cliffs",
+          "normName": "memorialcliffs",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Red Line",
+          "normName": "redline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Norquay Gully",
+          "normName": "norquaygully",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Gun Run",
+          "normName": "gunrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Artillery Chutes",
+          "normName": "artillerychutes",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Sunny Side",
+          "normName": "sunnyside",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Hideaway",
+          "normName": "hideaway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Last Chance",
+          "normName": "lastchance",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North American Chair"
+        },
+        {
+          "name": "Constellation",
+          "normName": "constellation",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Elves' Alley",
+          "normName": "elvesalley",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Shooting star",
+          "normName": "shootingstar",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Asteroid's",
+          "normName": "asteroids",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Spirit traverse",
+          "normName": "spirittraverse",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Robs Run",
+          "normName": "robsrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Cascade Connector",
+          "normName": "cascadeconnector",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Lower Robs Run",
+          "normName": "lowerrobsrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Phantom",
+          "normName": "phantom",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Rays Run",
+          "normName": "raysrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Abracadabra pitch",
+          "normName": "abracadabrapitch",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Abracadabra lower",
+          "normName": "abracadabralower",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Edge Hunter",
+          "normName": "edgehunter",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Crossroads",
+          "normName": "crossroads",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Spirit Chair"
+        },
+        {
+          "name": "Sundance",
+          "normName": "sundance",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Sundance Carpet"
+        },
+        {
+          "name": "Express Way",
+          "normName": "way",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Zoomer",
+          "normName": "zoomer",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Cascade",
+          "normName": "cascade",
+          "difficulty": "blue",
+          "groomed": true,
+          "status": "open",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Enchanted Forest",
+          "normName": "enchantedforest",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Valley of 10",
+          "normName": "valleyof10",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Milky Way",
+          "normName": "milkyway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Scooter",
+          "normName": "scooter",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Cascade Chair"
+        },
+        {
+          "name": "Mystic Trail",
+          "normName": "mystictrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "40 Mile Gully",
+          "normName": "40milegully",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "FM 2",
+          "normName": "fm2",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Sun Chutes",
+          "normName": "sunchutes",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Norquay 100 Glades",
+          "normName": "norquay100glades",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Spirit Sneak",
+          "normName": "spiritsneak",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Sheep Chutes",
+          "normName": "sheepchutes",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Goat Chutes",
+          "normName": "goatchutes",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "S-Spine",
+          "normName": "sspine",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Steel Pipes",
+          "normName": "steelpipes",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Giver Grandi",
+          "normName": "givergrandi",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Banshee Glades",
+          "normName": "bansheeglades",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Monod's Legacy",
+          "normName": "monodslegacy",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Toni's Trees",
+          "normName": "tonistrees",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Crosby's Run",
+          "normName": "crosbysrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Bruno's Gully",
+          "normName": "brunosgully",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Pristov's Tale",
+          "normName": "pristovstale",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Silver Legacy",
+          "normName": "silverlegacy",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Wiegele's",
+          "normName": "wiegeles",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Norquay 90 Glades",
+          "normName": "norquay90glades",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Black Magic",
+          "normName": "blackmagic",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Kapoof",
+          "normName": "kapoof",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Crazy Canuck",
+          "normName": "crazycanuck",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Last Chance",
+          "normName": "lastchance",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Knight Flight",
+          "normName": "knightflight",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Stoney Trail",
+          "normName": "stoneytrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Deerfoot Trail",
+          "normName": "deerfoottrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Easy Out",
+          "normName": "easyout",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "The Big Easy",
+          "normName": "bigeasy",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Turbulence",
+          "normName": "turbulence",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Horse Trail",
+          "normName": "horsetrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mystic Chair"
+        },
+        {
+          "name": "Slow Dance",
+          "normName": "slowdance",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Rundle Carpet"
+        }
+      ]
+    }
+  ]
+}
