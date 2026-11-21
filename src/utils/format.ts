@@ -90,6 +90,17 @@ export function weatherDescription(code: number, lang: Lang): string {
   return lang === 'zh' ? '高山干冷' : 'Crisp Alpine';
 }
 
+const TRAIL_ALIAS_MAP: Record<string, string> = {
+  banffavenue: 'banffave',
+  boutrysbowl: 'bountysbowl',
+  strawberrypark: 'strawberryterrainpark',
+};
+
+function canonicalTrailKey(k: string): string {
+  const normalized = k.replace(/avenue/g, 'ave');
+  return TRAIL_ALIAS_MAP[normalized] || normalized;
+}
+
 /**
  * Matches a GeoJSON feature (trail or lift) from OpenStreetMap against the live resort status list
  */
@@ -98,27 +109,26 @@ export function matchLiftStatus(
   resort: ResortData
 ): LiftItem | undefined {
   const key = osmProps.normName || normKey(osmProps.name || '');
-  const rawLower = String(osmProps.name || '').toLowerCase();
   const lType = String(osmProps.liftType || '').toLowerCase();
 
-  for (const lift of resort.lifts) {
-    if (lift.normName && key && (lift.normName === key || key.includes(lift.normName) || lift.normName.includes(key))) {
-      return lift;
-    }
-    // Special canonical matches (e.g., Sunshine Gondola <-> Sunshine Village Gondola I/II, Magic Carpet <-> Mitey Mite / Sunny Side)
-    if (lType === 'gondola' && (lift.liftType === 'gondola' || /gondola/i.test(lift.name))) {
-      return lift;
-    }
-    if (
-      (lType === 'magic_carpet' || rawLower.includes('carpet')) &&
-      lift.liftType === 'magic_carpet' &&
-      !rawLower.includes('tubing') &&
-      !rawLower.includes('rundle')
-    ) {
-      return lift;
-    }
+  // 1. Exact normName match first
+  const exact = resort.lifts.find((l) => l.normName && l.normName === key);
+  if (exact) return exact;
+
+  // 2. Gondola match (e.g. Sunshine Gondola I & II <-> official "Gondola")
+  if (lType === 'gondola') {
+    const gondola = resort.lifts.find(
+      (l) => l.liftType === 'gondola' || /gondola/i.test(l.name)
+    );
+    if (gondola) return gondola;
   }
-  return undefined;
+
+  // 3. Controlled prefix match for chairlifts (e.g. "Tee Pee Town" <-> "Teepee Town")
+  const compactKey = key.replace(/\s+/g, '');
+  return resort.lifts.find((l) => {
+    if (!l.normName || l.liftType === 'magic_carpet') return false;
+    return l.normName === compactKey;
+  });
 }
 
 export function matchTrailStatus(
@@ -126,21 +136,9 @@ export function matchTrailStatus(
   resort: ResortData
 ): TrailItem | undefined {
   if (osmProps.isUnnamed) return undefined;
-  const key = osmProps.normName || normKey(osmProps.name || '');
-  if (!key) return undefined;
+  const rawKey = osmProps.normName || normKey(osmProps.name || '');
+  if (!rawKey) return undefined;
 
-  // 1. Exact normName match
-  const exact = resort.trails.find((t) => t.normName === key);
-  if (exact) return exact;
-
-  // 2. Prefix / substring match for Upper/Lower or Avenue/Ave variations
-  const expandedKey = key.replace(/avenue/g, 'ave');
-  return resort.trails.find((t) => {
-    const tk = t.normName.replace(/avenue/g, 'ave');
-    if (tk === expandedKey) return true;
-    if (tk.length >= 5 && expandedKey.length >= 5) {
-      return tk.includes(expandedKey) || expandedKey.includes(tk);
-    }
-    return false;
-  });
+  const targetKey = canonicalTrailKey(rawKey);
+  return resort.trails.find((t) => canonicalTrailKey(t.normName) === targetKey);
 }

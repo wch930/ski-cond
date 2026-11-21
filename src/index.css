@@ -1231,13 +1231,22 @@ button {
   color: var(--bg-surface);
 }
 
-/* Selected Trail / Lift Telemetry Card on Map */
-.map-feature-card {
+/* Bottom-left stack for GPS Telemetry Card & Selected Trail/Lift Card */
+.map-bottom-left-stack {
   position: absolute;
   bottom: 24px;
   left: 16px;
   z-index: 9;
-  width: min(350px, calc(100% - 32px));
+  width: min(355px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.map-feature-card {
+  pointer-events: auto;
+  width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
@@ -1501,4 +1510,148 @@ button {
     background: var(--accent-alpine);
     color: #fff;
   }
+}
+
+/* ==========================================================================
+   On-Mountain Live GPS Marker, Heading Cone & Skier Telemetry HUD
+   ========================================================================== */
+
+.hud-btn.is-gps-active {
+  background: hsl(204, 92%, 44%);
+  color: #fff;
+}
+
+.hud-btn.is-gps-active:hover {
+  background: hsl(204, 92%, 38%);
+  color: #fff;
+}
+
+.skier-gps-marker {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.skier-gps-pulse {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: hsla(203, 94%, 52%, 0.24);
+  animation: gpsPulse 2s ease-out infinite;
+}
+
+@keyframes gpsPulse {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.skier-gps-cone {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 2px;
+  left: 2px;
+  transform-origin: 50% 50%;
+  transition: transform 0.18s linear;
+}
+
+.skier-gps-dot {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #0284c7;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.55), 0 0 0 1px rgba(15, 23, 42, 0.18);
+  z-index: 2;
+}
+
+.gps-hud-card {
+  pointer-events: auto;
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+@media (max-width: 860px) {
+  .map-bottom-left-stack {
+    bottom: 68px;
+  }
+}
+
+.gps-hud-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gps-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+.gps-hud-card__trail-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gps-hud-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.gps-hud-stat {
+  background: var(--bg-subtle);
+  border-radius: 7px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gps-hud-stat__lbl {
+  font-size: 0.66rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.gps-hud-stat__val {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.gps-hud-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }

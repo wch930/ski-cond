@@ -541,14 +541,12 @@ async function fetchLakeLouiseLive(sbSummary: ResortBlockSummary | null | undefi
   });
 
   const earlyCorridorPriority = [
-    'wiwaxy',
-    'wiwaxy500',
-    'easystreet',
-    'baldeagle',
     'deerrun',
     'lowerflight',
-    'upperwiwaxy',
-    'pinecone',
+    'baldeagle',
+    'wiwaxy',
+    'easystreet',
+    'juniper',
     'pika',
     'meadowlark',
   ];
@@ -574,7 +572,7 @@ async function fetchLakeLouiseLive(sbSummary: ResortBlockSummary | null | undefi
   let openNow = allTrails.filter((t) => t.status === 'open').length;
   for (const key of earlyCorridorPriority) {
     if (openNow >= data.runsOpen) break;
-    const hit = allTrails.find((t) => t.status !== 'open' && t.normName.includes(key));
+    const hit = allTrails.find((t) => t.status !== 'open' && t.normName === key);
     if (hit) {
       hit.status = 'open';
       openNow++;
