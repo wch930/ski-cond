@@ -154,7 +154,14 @@ export function ResortSkiMap({
             maxzoom: 18,
             attribution: '© Esri World Imagery',
           },
-          terrarium: {
+          'terrain-dem': {
+            type: 'raster-dem',
+            tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+            tileSize: 256,
+            encoding: 'terrarium',
+            maxzoom: 14,
+          },
+          'hillshade-dem': {
             type: 'raster-dem',
             tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
             tileSize: 256,
@@ -167,7 +174,7 @@ export function ResortSkiMap({
           },
         },
         terrain: {
-          source: 'terrarium',
+          source: 'terrain-dem',
           exaggeration: 1.22,
         },
         layers: [
@@ -192,14 +199,27 @@ export function ResortSkiMap({
           {
             id: 'alpine-hillshade',
             type: 'hillshade',
-            source: 'terrarium',
+            source: 'hillshade-dem',
             paint: {
-              'hillshade-exaggeration': 0.5,
+              'hillshade-exaggeration': 0.42,
               'hillshade-shadow-color': '#1e293b',
               'hillshade-highlight-color': '#ffffff',
             },
           },
-          // Closed trails (subtle dashed)
+          // Closed trails subtle casing so network is legible on green/satellite terrain
+          {
+            id: 'trails-closed-casing',
+            type: 'line',
+            source: 'ski-network',
+            filter: ['all', ['==', ['get', 'featureType'], 'trail'], ['==', ['get', 'liveStatus'], 'closed']],
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: {
+              'line-color': '#ffffff',
+              'line-width': ['interpolate', ['linear'], ['zoom'], 12, 3.2, 15, 5],
+              'line-opacity': 0.45,
+            },
+          },
+          // Closed trails (dashed difficulty color)
           {
             id: 'trails-closed',
             type: 'line',
@@ -218,9 +238,9 @@ export function ResortSkiMap({
                 '#dc2626',
                 '#1e293b',
               ],
-              'line-width': ['interpolate', ['linear'], ['zoom'], 12, 1.4, 15, 2.5],
-              'line-dasharray': [2, 2.2],
-              'line-opacity': 0.36,
+              'line-width': ['interpolate', ['linear'], ['zoom'], 12, 1.9, 15, 3.1],
+              'line-dasharray': [2, 2],
+              'line-opacity': 0.65,
             },
           },
           // Open trails white snow halo casing
@@ -393,9 +413,12 @@ export function ResortSkiMap({
 
     const interactiveLayers = ['lifts-open', 'lifts-closed', 'trails-open', 'trails-closed'];
 
-    map.on('load', () => {
-      setMapReady(true);
-    });
+    const markReady = () => setMapReady(true);
+    map.on('style.load', markReady);
+    map.on('load', markReady);
+    if (map.isStyleLoaded()) {
+      markReady();
+    }
 
     map.on('mousemove', (e: MapMouseEvent) => {
       const hits = map.queryRenderedFeatures(e.point, { layers: interactiveLayers });
@@ -576,7 +599,7 @@ export function ResortSkiMap({
     const map = mapRef.current;
     if (!map || !mapReady) return;
     if (is3D) {
-      map.setTerrain({ source: 'terrarium', exaggeration: 1.22 });
+      map.setTerrain({ source: 'terrain-dem', exaggeration: 1.22 });
       map.easeTo({ pitch: resort.mapViewport.pitch, bearing: resort.mapViewport.bearing, duration: 650 });
     } else {
       map.setTerrain(null);

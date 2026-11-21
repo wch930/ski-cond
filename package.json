@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "node -e \"import('node:fs').then(fs=>fs.copyFileSync('node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs','public/maplibre-gl-worker.js'))\"",
     "dev": "vite",
+    "prebuild": "node -e \"import('node:fs').then(fs=>fs.copyFileSync('node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs','public/maplibre-gl-worker.js'))\"",
     "build": "tsc -b && vite build",
     "cf:dev": "wrangler dev",
     "deploy": "wrangler deploy",

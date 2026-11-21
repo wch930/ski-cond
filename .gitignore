@@ -12,9 +12,10 @@ dist
 dist-ssr
 *.local
 
-# Cloudflare Wrangler
+# Cloudflare Wrangler & generated worker asset
 .wrangler
 .dev.vars*
+public/maplibre-gl-worker.js
 
 # Editor directories and files
 .vscode/*
