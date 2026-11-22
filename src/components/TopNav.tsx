@@ -1,7 +1,10 @@
 import { RefreshCw, Sun, Moon, Map as MapIcon } from 'lucide-react';
-import type { Lang, ResortData, ThemeMode, UnitSystem } from '../types';
+import type { Lang, RegionInfo, ResortData, ThemeMode, UnitSystem } from '../types';
 
 interface Props {
+  regions: RegionInfo[];
+  selectedRegionId: string;
+  onSelectRegion: (regionId: string) => void;
   resorts: ResortData[];
   selectedResortId: string | null;
   onSelectResort: (id: string | null) => void;
@@ -16,6 +19,9 @@ interface Props {
 }
 
 export function TopNav({
+  regions,
+  selectedRegionId,
+  onSelectRegion,
   resorts,
   selectedResortId,
   onSelectResort,
@@ -28,6 +34,17 @@ export function TopNav({
   isRefreshing,
   onRefresh,
 }: Props) {
+  const activeRegions = regions.filter((r) => r.active);
+  const currentRegion = regions.find((r) => r.id === selectedRegionId);
+  const overviewLabel =
+    selectedRegionId === 'toronto'
+      ? lang === 'zh'
+        ? '多伦多总览'
+        : `Toronto (${resorts.length})`
+      : lang === 'zh'
+        ? '班夫总览'
+        : `Banff (${resorts.length})`;
+
   return (
     <header className="top-nav">
       <div className="top-nav__inner">
@@ -36,7 +53,7 @@ export function TopNav({
           type="button"
           className="brand-btn"
           onClick={() => onSelectResort(null)}
-          title={lang === 'zh' ? '返回班夫雪场总览' : 'Back to Banff Overview'}
+          title={lang === 'zh' ? '返回当前区域雪场总览' : 'Back to Region Overview'}
         >
           <span className="brand-mark" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
@@ -50,12 +67,32 @@ export function TopNav({
               POWDERLINE<span className="hide-xxs"> · 雪线</span>
             </span>
             <span className="brand-sub">
-              {lang === 'zh' ? 'Banff 班夫实时雪况与雪道图' : 'Banff Live Snow & Trail Maps'}
+              {lang === 'zh'
+                ? `${currentRegion?.shortNameZh ?? '加拿大'}实时雪况与雪道图`
+                : `${currentRegion?.shortName ?? 'Canada'} Live Snow & Trail Maps`}
             </span>
           </span>
         </button>
 
-        <nav className="nav-center" aria-label="Ski Resorts">
+        <nav className="nav-center" aria-label="Ski Regions and Resorts">
+          {activeRegions.length > 1 && (
+            <div className="segmented-toggle" role="group" aria-label="Ski Region">
+              {activeRegions.map((reg) => (
+                <button
+                  key={reg.id}
+                  id={`nav-region-${reg.id}`}
+                  type="button"
+                  className={reg.id === selectedRegionId ? 'is-active' : ''}
+                  onClick={() => onSelectRegion(reg.id)}
+                >
+                  {lang === 'zh'
+                    ? reg.shortNameZh || reg.nameZh.split(' ')[0]
+                    : reg.shortName || reg.name.split(' ')[0]}
+                </button>
+              ))}
+            </div>
+          )}
+
           <button
             id="nav-overview-pill"
             type="button"
@@ -63,7 +100,7 @@ export function TopNav({
             onClick={() => onSelectResort(null)}
           >
             <MapIcon size={14} />
-            <span>{lang === 'zh' ? '班夫总览' : 'Banff All (3)'}</span>
+            <span>{overviewLabel}</span>
           </button>
           {resorts.map((r) => (
             <button
@@ -73,7 +110,7 @@ export function TopNav({
               className={`resort-tab-pill ${selectedResortId === r.id ? 'is-active' : ''}`}
               onClick={() => onSelectResort(r.id)}
             >
-              <span>{lang === 'zh' ? r.nameZh.replace('滑雪场', '') : r.shortName}</span>
+              <span>{lang === 'zh' ? r.nameZh.replace(/滑雪度假村|滑雪场/g, '') : r.shortName}</span>
               <span className="resort-tab-pill__metric">
                 {r.terrain.runsOpen}/{r.terrain.runsTotal}
               </span>

@@ -7,18 +7,31 @@ import { ResortCard } from './components/ResortCard';
 import { BanffRegionalMap } from './components/BanffRegionalMap';
 import { ResortDetailView } from './components/ResortDetailView';
 
-function readResortFromHash(): string | null {
+const TORONTO_RESORT_IDS = new Set(['bluemountain', 'mslm', 'horseshoe', 'gleneden']);
+
+function readRouteFromHash(): { regionId: string; resortId: string | null } {
   const h = window.location.hash.replace(/^#/, '');
   const params = new URLSearchParams(h);
-  return params.get('resort');
+  const resortId = params.get('resort');
+  const rawRegion = params.get('region');
+  if (resortId && TORONTO_RESORT_IDS.has(resortId)) {
+    return { regionId: 'toronto', resortId };
+  }
+  if (rawRegion === 'toronto' || rawRegion === 'banff') {
+    return { regionId: rawRegion, resortId };
+  }
+  return { regionId: 'banff', resortId };
 }
 
 export function App() {
   const [payload, setPayload] = useState<ConditionsPayload | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
-  const [selectedResortId, setSelectedResortId] = useState<string | null>(() =>
-    readResortFromHash()
+  const [selectedRegionId, setSelectedRegionId] = useState<string>(
+    () => readRouteFromHash().regionId
+  );
+  const [selectedResortId, setSelectedResortId] = useState<string | null>(
+    () => readRouteFromHash().resortId
   );
   const [unit, setUnit] = useState<UnitSystem>('metric');
   const [lang, setLang] = useState<Lang>('zh');
@@ -30,21 +43,47 @@ export function App() {
 
   useEffect(() => {
     const onHash = () => {
-      setSelectedResortId(readResortFromHash());
+      const next = readRouteFromHash();
+      setSelectedRegionId(next.regionId);
+      setSelectedResortId(next.resortId);
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const selectResort = useCallback((id: string | null) => {
-    setSelectedResortId(id);
-    if (id) {
-      window.history.pushState(null, '', `#resort=${id}`);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
+  const allResorts = useMemo(() => payload?.resorts ?? [], [payload]);
+  const regions = useMemo(() => payload?.regions ?? [], [payload]);
+
+  const selectRegion = useCallback((regionId: string) => {
+    setSelectedRegionId(regionId);
+    setSelectedResortId(null);
+    if (regionId === 'banff') {
       window.history.pushState(null, '', window.location.pathname);
+    } else {
+      window.history.pushState(null, '', `#region=${regionId}`);
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const selectResort = useCallback(
+    (id: string | null) => {
+      setSelectedResortId(id);
+      if (id) {
+        const found = allResorts.find((r) => r.id === id);
+        const targetRegion = found?.regionId || (TORONTO_RESORT_IDS.has(id) ? 'toronto' : selectedRegionId);
+        setSelectedRegionId(targetRegion);
+        window.history.pushState(null, '', `#resort=${id}`);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        if (selectedRegionId === 'banff') {
+          window.history.pushState(null, '', window.location.pathname);
+        } else {
+          window.history.pushState(null, '', `#region=${selectedRegionId}`);
+        }
+      }
+    },
+    [allResorts, selectedRegionId]
+  );
 
   const fetchPayload = useCallback(async (force: boolean): Promise<ConditionsPayload | null> => {
     try {
@@ -87,15 +126,36 @@ export function App() {
     };
   }, [fetchPayload]);
 
-  const resorts = useMemo(() => payload?.resorts ?? [], [payload]);
   const selectedResort = useMemo(
-    () => resorts.find((r) => r.id === selectedResortId) ?? null,
-    [resorts, selectedResortId]
+    () => allResorts.find((r) => r.id === selectedResortId) ?? null,
+    [allResorts, selectedResortId]
   );
 
-  // Aggregate Banff SkiBig3 regional totals
+  const effectiveRegionId = selectedResort ? selectedResort.regionId : selectedRegionId;
+
+  const activeRegion = useMemo(
+    () => regions.find((r) => r.id === effectiveRegionId) ?? regions[0],
+    [regions, effectiveRegionId]
+  );
+
+  const regionResorts = useMemo(
+    () => allResorts.filter((r) => r.regionId === effectiveRegionId),
+    [allResorts, effectiveRegionId]
+  );
+
+  const resortCountByRegion = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const r of allResorts) {
+      counts[r.regionId] = (counts[r.regionId] || 0) + 1;
+    }
+    return counts;
+  }, [allResorts]);
+
+  const isToronto = effectiveRegionId === 'toronto';
+
+  // Aggregate active region totals
   const summary = useMemo(() => {
-    if (!resorts.length) {
+    if (!regionResorts.length) {
       return {
         runsOpen: 0,
         runsTotal: 0,
@@ -104,6 +164,8 @@ export function App() {
         groomedTotal: 0,
         best7dResort: '',
         best7dCm: 0,
+        bestForecastResort: '',
+        bestForecastCm: 0,
         deepestBaseResort: '',
         deepestBaseCm: 0,
       };
@@ -113,20 +175,25 @@ export function App() {
     let liftsOpen = 0;
     let liftsTotal = 0;
     let groomedTotal = 0;
-    let best7d = resorts[0];
-    let deepest = resorts[0];
+    let best7d = regionResorts[0];
+    let bestForecast = regionResorts[0];
+    let deepest = regionResorts[0];
 
-    for (const r of resorts) {
+    for (const r of regionResorts) {
       runsOpen += r.terrain.runsOpen;
       runsTotal += r.terrain.runsTotal;
       liftsOpen += r.terrain.liftsOpen;
       liftsTotal += r.terrain.liftsTotal;
       groomedTotal += r.terrain.groomedCount;
       if (r.snow.snow7dCm > best7d.snow.snow7dCm) best7d = r;
+      if (r.snow.forecast7dCm > bestForecast.snow.forecast7dCm) bestForecast = r;
       if ((r.snow.upperBaseCm || r.snow.baseCm) > (deepest.snow.upperBaseCm || deepest.snow.baseCm)) {
         deepest = r;
       }
     }
+
+    const fmtName = (r: (typeof regionResorts)[number]) =>
+      lang === 'zh' ? r.nameZh.replace(/滑雪度假村|滑雪场/g, '') : r.shortName;
 
     return {
       runsOpen,
@@ -134,17 +201,24 @@ export function App() {
       liftsOpen,
       liftsTotal,
       groomedTotal,
-      best7dResort: lang === 'zh' ? best7d.nameZh.replace('滑雪场', '') : best7d.shortName,
+      best7dResort: fmtName(best7d),
       best7dCm: best7d.snow.snow7dCm,
-      deepestBaseResort: lang === 'zh' ? deepest.nameZh.replace('滑雪场', '') : deepest.shortName,
+      bestForecastResort: fmtName(bestForecast),
+      bestForecastCm: bestForecast.snow.forecast7dCm,
+      deepestBaseResort: fmtName(deepest),
       deepestBaseCm: deepest.snow.upperBaseCm || deepest.snow.baseCm,
     };
-  }, [resorts, lang]);
+  }, [regionResorts, lang]);
+
+  const showForecastInStrip = summary.best7dCm === 0 && summary.bestForecastCm > 0;
 
   return (
     <>
       <TopNav
-        resorts={resorts}
+        regions={regions}
+        selectedRegionId={effectiveRegionId}
+        onSelectRegion={selectRegion}
+        resorts={regionResorts}
         selectedResortId={selectedResort?.id ?? null}
         onSelectResort={selectResort}
         unit={unit}
@@ -168,8 +242,8 @@ export function App() {
             }}
           >
             {lang === 'zh'
-              ? '正在同步班夫三大雪场（Sunshine · Lake Louise · Norquay）官方实时雪况...'
-              : 'Syncing live snow conditions from Banff SkiBig3 resorts...'}
+              ? '正在同步班夫与多伦多周边雪场官方实时雪况...'
+              : 'Syncing live snow conditions across Banff & Greater Toronto resorts...'}
           </div>
         </main>
       ) : selectedResort ? (
@@ -184,26 +258,52 @@ export function App() {
           {/* Hero & Region Switcher */}
           <section className="hero-bar">
             <div className="hero-bar__title-group">
-              <div className="region-selector-row">
-                {(payload?.regions ?? []).map((reg) => (
-                  <span
-                    key={reg.id}
-                    className={`region-chip ${reg.active ? 'is-active' : 'is-upcoming'}`}
-                  >
-                    <Compass size={13} />
-                    <span>{lang === 'zh' ? reg.nameZh : reg.name}</span>
-                  </span>
-                ))}
+              <div className="region-selector-row" role="tablist" aria-label="Ski Regions">
+                {regions.map((reg) => {
+                  const isSelected = reg.id === selectedRegionId;
+                  const count = resortCountByRegion[reg.id] || 0;
+                  if (reg.active) {
+                    return (
+                      <button
+                        key={reg.id}
+                        id={`region-chip-${reg.id}`}
+                        type="button"
+                        role="tab"
+                        aria-selected={isSelected}
+                        className={`region-chip is-clickable ${isSelected ? 'is-active' : ''}`}
+                        onClick={() => selectRegion(reg.id)}
+                      >
+                        <Compass size={13} />
+                        <span>{lang === 'zh' ? reg.nameZh : reg.name}</span>
+                        {count > 0 && <span className="region-chip__count">{count}</span>}
+                      </button>
+                    );
+                  }
+                  return (
+                    <span key={reg.id} className="region-chip is-upcoming">
+                      <Compass size={13} />
+                      <span>{lang === 'zh' ? reg.nameZh : reg.name}</span>
+                    </span>
+                  );
+                })}
               </div>
               <h1 className="hero-h1">
-                {lang === 'zh'
-                  ? 'Banff 班夫国家公园 · 实时雪况与雪道地图'
-                  : 'Banff National Park · Live Snow Report & Trail Maps'}
+                {isToronto
+                  ? lang === 'zh'
+                    ? '多伦多周边 · 安省四大雪场实时雪况与雪道地图'
+                    : 'Greater Toronto & Southern Ontario · Live Snow Report & Trail Maps'
+                  : lang === 'zh'
+                    ? 'Banff 班夫国家公园 · 实时雪况与雪道地图'
+                    : 'Banff National Park · Live Snow Report & Trail Maps'}
               </h1>
               <p className="hero-subtitle">
-                {lang === 'zh'
-                  ? '直连 SkiBig3 三大雪场官方数据源与高山气象站，随时查看今日开放雪道、实时降雪厚度（cm）与运行缆车，点击任一雪场即可探索 3D 实时雪道图。'
-                  : 'Live snow depth, open runs, groomed terrain, and spinning lifts across Banff Sunshine, Lake Louise, and Mt. Norquay. Select any mountain to explore its live 3D trail map.'}
+                {isToronto
+                  ? lang === 'zh'
+                    ? '覆盖多伦多 40 分钟至 2 小时车程四大主力雪场（蓝山 Blue Mountain · 圣路易斯月石山 MSLM · 马蹄谷 Horseshoe · 格伦伊登 Glen Eden），直连官方雪报、7 日降雪预报与全山雪道缆车地图。'
+                    : 'Live slope & lift status, snowmaking readiness, 7-day snow forecasts, and interactive OpenStreetMap trail maps across Blue Mountain, Mount St. Louis Moonstone, Horseshoe Valley, and Glen Eden.'
+                  : lang === 'zh'
+                    ? '直连 SkiBig3 三大雪场官方数据源与高山气象站，随时查看今日开放雪道、实时降雪厚度（cm）与运行缆车，点击任一雪场即可探索实时雪道图。'
+                    : 'Live snow depth, open runs, groomed terrain, and spinning lifts across Banff Sunshine, Lake Louise, and Mt. Norquay. Select any mountain to explore its interactive trail map.'}
               </p>
             </div>
 
@@ -220,20 +320,28 @@ export function App() {
             )}
           </section>
 
-          {/* Banff SkiBig3 Aggregate Telemetry Strip */}
-          <section className="telemetry-strip" aria-label="Banff aggregate ski conditions">
+          {/* Regional Aggregate Telemetry Strip */}
+          <section className="telemetry-strip" aria-label="Regional aggregate ski conditions">
             <div className="telemetry-cell">
               <span className="telemetry-cell__label">
                 <MountainSnow size={14} />
-                {lang === 'zh' ? '班夫今日开放雪道' : 'Total Open Trails'}
+                {lang === 'zh'
+                  ? isToronto
+                    ? '多伦多周边开放雪道'
+                    : '班夫今日开放雪道'
+                  : 'Total Open Trails'}
               </span>
               <span className="telemetry-cell__value">
                 {summary.runsOpen} / {summary.runsTotal}
               </span>
               <span className="telemetry-cell__sub">
-                {lang === 'zh'
-                  ? `三大雪场共已压雪 ${summary.groomedTotal} 条`
-                  : `${summary.groomedTotal} groomed runs across Banff`}
+                {summary.runsOpen > 0
+                  ? lang === 'zh'
+                    ? `共已压雪 ${summary.groomedTotal} 条`
+                    : `${summary.groomedTotal} groomed runs open`
+                  : lang === 'zh'
+                    ? '开板前准备中 · 可提前浏览全山雪道图'
+                    : 'Pre-season prep · Full trail maps ready'}
               </span>
             </div>
 
@@ -246,21 +354,33 @@ export function App() {
                 {summary.liftsOpen} / {summary.liftsTotal}
               </span>
               <span className="telemetry-cell__sub">
-                {lang === 'zh'
-                  ? '含高速箱式缆车与高速吊椅'
-                  : 'Gondolas, high-speed quads & carpets'}
+                {isToronto
+                  ? lang === 'zh'
+                    ? '含高速 8 人/6 人吊椅与初学者魔毯'
+                    : '8-pack & 6-pack express chairs & carpets'
+                  : lang === 'zh'
+                    ? '含高速箱式缆车与高速吊椅'
+                    : 'Gondolas, high-speed quads & carpets'}
               </span>
             </div>
 
             <div className="telemetry-cell">
               <span className="telemetry-cell__label">
                 <Snowflake size={14} />
-                {lang === 'zh' ? '7日最佳降雪' : 'Best 7-Day Snow'}
+                {showForecastInStrip
+                  ? lang === 'zh'
+                    ? '未来7日降雪预报'
+                    : '7-Day Snow Forecast'
+                  : lang === 'zh'
+                    ? '7日最佳降雪'
+                    : 'Best 7-Day Snow'}
               </span>
               <span className="telemetry-cell__value" style={{ color: 'var(--accent-alpine)' }}>
-                +{formatSnow(summary.best7dCm, unit)}
+                +{formatSnow(showForecastInStrip ? summary.bestForecastCm : summary.best7dCm, unit)}
               </span>
-              <span className="telemetry-cell__sub">{summary.best7dResort}</span>
+              <span className="telemetry-cell__sub">
+                {showForecastInStrip ? summary.bestForecastResort : summary.best7dResort}
+              </span>
             </div>
 
             <div className="telemetry-cell">
@@ -271,13 +391,22 @@ export function App() {
               <span className="telemetry-cell__value">
                 {formatSnow(summary.deepestBaseCm, unit)}
               </span>
-              <span className="telemetry-cell__sub">{summary.deepestBaseResort}</span>
+              <span className="telemetry-cell__sub">
+                {summary.deepestBaseCm > 0
+                  ? summary.deepestBaseResort
+                  : lang === 'zh'
+                    ? '等待降温人工造雪窗口'
+                    : 'Awaiting snowmaking cold snap'}
+              </span>
             </div>
           </section>
 
-          {/* 3 Banff Resort Telemetry Cards */}
-          <section className="resorts-grid" aria-label="Banff Ski Resorts">
-            {resorts.map((resort) => (
+          {/* Resort Telemetry Cards */}
+          <section
+            className={`resorts-grid ${regionResorts.length === 4 ? 'is-quad' : ''}`}
+            aria-label="Ski Resorts"
+          >
+            {regionResorts.map((resort) => (
               <ResortCard
                 key={resort.id}
                 resort={resort}
@@ -288,9 +417,10 @@ export function App() {
             ))}
           </section>
 
-          {/* Regional Interactive Map of Banff National Park */}
+          {/* Regional Interactive Map */}
           <BanffRegionalMap
-            resorts={resorts}
+            region={activeRegion}
+            resorts={regionResorts}
             unit={unit}
             lang={lang}
             onSelectResort={(id) => selectResort(id)}

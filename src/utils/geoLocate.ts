@@ -169,25 +169,26 @@ export interface DemoWaypoint {
  */
 export function buildSimulatedRun(resort: ResortData, enrichedGeojson: any | null): DemoWaypoint[] {
   if (!enrichedGeojson) return [];
-  const openTrails = (enrichedGeojson.features || []).filter(
+  const allNamedTrails = (enrichedGeojson.features || []).filter(
     (f: any) =>
       f.geometry?.type === 'LineString' &&
       f.properties?.featureType === 'trail' &&
-      f.properties?.liveStatus === 'open' &&
       !f.properties?.isUnnamed &&
       f.geometry.coordinates.length >= 6
   );
+  const openTrails = allNamedTrails.filter((f: any) => f.properties?.liveStatus === 'open');
+  const candidates = openTrails.length > 0 ? openTrails : allNamedTrails;
 
-  // Pick longest open trail segment for a satisfying glide
-  openTrails.sort(
+  // Pick longest candidate trail segment for a satisfying glide
+  candidates.sort(
     (a: any, b: any) => (b.properties?.lengthMeters || 0) - (a.properties?.lengthMeters || 0)
   );
-  const chosen = openTrails[0];
+  const chosen = candidates[0];
   if (!chosen) return [];
 
   const coords: [number, number][] = chosen.geometry.coordinates;
   const topElev = Math.round(resort.elevationBaseM + resort.verticalDropM * 0.58);
-  const botElev = resort.elevationBaseM + 40;
+  const botElev = resort.elevationBaseM + Math.min(40, Math.round(resort.verticalDropM * 0.15));
 
   return coords.map((c, idx) => {
     const next = coords[Math.min(coords.length - 1, idx + 1)];

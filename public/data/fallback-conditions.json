@@ -1,30 +1,56 @@
 {
-  "fetchedAt": "2026-11-21T03:35:43.924Z",
+  "fetchedAt": "2026-11-22T01:48:44.574Z",
   "source": "live-official-feeds",
   "regions": [
     {
       "id": "banff",
       "name": "Banff National Park · SkiBig3",
       "nameZh": "班夫国家公园 · SkiBig3",
+      "shortName": "Banff",
+      "shortNameZh": "班夫",
       "province": "Alberta, Canada",
       "active": true,
       "center": [
-        -115.88,
-        51.26
+        -115.86,
+        51.25
       ],
-      "zoom": 9.2
+      "zoom": 9.15,
+      "hubLabel": "📍 Banff Town 班夫镇",
+      "hubCoordinates": [
+        -115.5708,
+        51.1784
+      ]
     },
     {
-      "id": "kananaskis-jasper",
-      "name": "Kananaskis & Jasper",
-      "nameZh": "卡纳纳斯基斯 & 贾斯珀 (即将接入)",
-      "province": "Alberta, Canada",
+      "id": "toronto",
+      "name": "Greater Toronto · Southern Ontario",
+      "nameZh": "多伦多周边 · 安省雪场",
+      "shortName": "Toronto Area",
+      "shortNameZh": "多伦多周边",
+      "province": "Ontario, Canada",
+      "active": true,
+      "center": [
+        -79.88,
+        44.12
+      ],
+      "zoom": 7.45,
+      "hubLabel": "📍 Toronto 多伦多",
+      "hubCoordinates": [
+        -79.3832,
+        43.6532
+      ]
+    },
+    {
+      "id": "quebec-laurentians",
+      "name": "Mont-Tremblant & Quebec",
+      "nameZh": "翠湖山庄 & 魁北克 (即将接入)",
+      "province": "Quebec, Canada",
       "active": false
     },
     {
       "id": "powder-highway",
       "name": "BC Powder Highway",
-      "nameZh": "BC 粉雪公路 · Revy / KH (即将接入)",
+      "nameZh": "BC 粉雪公路 · Whistler / Revy (即将接入)",
       "province": "British Columbia, Canada",
       "active": false
     }
@@ -57,6 +83,10 @@
       "skiableAcres": 3358,
       "distanceFromBanffKm": 15,
       "driveMinutesFromBanff": 18,
+      "hubName": "Banff",
+      "hubNameZh": "班夫镇",
+      "distanceFromHubKm": 15,
+      "driveMinutesFromHub": 18,
       "officialUrl": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
       "geojsonUrl": "/geojson/sunshine.geojson",
       "webcams": [
@@ -89,89 +119,89 @@
         "snow7dCm": 18,
         "baseCm": 28,
         "upperBaseCm": 28,
-        "seasonCm": 63,
-        "forecast7dCm": 0
+        "seasonCm": 61,
+        "forecast7dCm": 1.1
       },
       "terrain": {
         "runsOpen": 8,
         "runsTotal": 139,
         "runsOpenPct": 6,
-        "groomedCount": 4,
+        "groomedCount": 5,
         "liftsOpen": 3,
         "liftsTotal": 12,
         "liftsOpenPct": 25
       },
       "weather": {
-        "tempCurrentC": -12.6,
-        "tempSummitC": -13.3,
-        "tempBaseC": -8.9,
-        "tempHighC": -8,
-        "feelsLikeC": -18,
-        "windKmh": 11,
-        "windGustKmh": 19,
+        "tempCurrentC": -15.9,
+        "tempSummitC": -14.6,
+        "tempBaseC": -10.2,
+        "tempHighC": -11,
+        "feelsLikeC": -20,
+        "windKmh": 9,
+        "windGustKmh": 10,
         "weatherCode": 0,
         "summary": "Partly Cloudy",
         "dailyForecast": [
           {
-            "date": "2026-11-20",
-            "weatherCode": 3,
-            "tempMaxC": -8,
-            "tempMinC": -14,
-            "snowCm": 0,
-            "windMaxKmh": 14
-          },
-          {
             "date": "2026-11-21",
-            "weatherCode": 0,
-            "tempMaxC": -12,
+            "weatherCode": 45,
+            "tempMaxC": -10,
             "tempMinC": -16,
             "snowCm": 0,
-            "windMaxKmh": 16
+            "windMaxKmh": 15
           },
           {
             "date": "2026-11-22",
-            "weatherCode": 0,
+            "weatherCode": 3,
             "tempMaxC": -9,
-            "tempMinC": -17,
+            "tempMinC": -15,
             "snowCm": 0,
-            "windMaxKmh": 14
+            "windMaxKmh": 17
           },
           {
             "date": "2026-11-23",
-            "weatherCode": 3,
-            "tempMaxC": -8,
-            "tempMinC": -16,
+            "weatherCode": 45,
+            "tempMaxC": -9,
+            "tempMinC": -13,
             "snowCm": 0,
-            "windMaxKmh": 9
+            "windMaxKmh": 21
           },
           {
             "date": "2026-11-24",
             "weatherCode": 45,
-            "tempMaxC": -7,
-            "tempMinC": -14,
-            "snowCm": 0,
-            "windMaxKmh": 10
-          },
-          {
-            "date": "2026-11-25",
-            "weatherCode": 45,
             "tempMaxC": -5,
             "tempMinC": -12,
             "snowCm": 0,
-            "windMaxKmh": 11
+            "windMaxKmh": 12
           },
           {
-            "date": "2026-11-26",
-            "weatherCode": 45,
+            "date": "2026-11-25",
+            "weatherCode": 51,
             "tempMaxC": -5,
             "tempMinC": -10,
             "snowCm": 0,
-            "windMaxKmh": 9
+            "windMaxKmh": 12
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 51,
+            "tempMaxC": -5,
+            "tempMinC": -9,
+            "snowCm": 0,
+            "windMaxKmh": 12
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 73,
+            "tempMaxC": -3,
+            "tempMinC": -8,
+            "snowCm": 1.1,
+            "windMaxKmh": 12
           }
         ]
       },
       "notes": "Snowsnake and lower Strawberry Face are open! Hop on Strawberry Express, carve a few turns down Snowsnake’s groomed centre, then cut across to lower Strawberry Face. The new terrain also includes lower Slush Cup, plus Boutry’s Bowl and Strawberry Surprise, both with marginal coverage. Mix in a lap on Dell Valley or try a feature in the rail park on lower Strawberry. Just getting started? Head to the Mitey Mite learning area for your first turns.",
-      "lastUpdated": "2026-11-20 19:01:17 MT",
+      "lastUpdated": "2026-11-21 08:39:22 MT",
       "dailyRunReportPdf": null,
       "dailyGroomingPdf": null,
       "lifts": [
@@ -805,7 +835,7 @@
           "name": "Boutry's Bowl",
           "normName": "boutrysbowl",
           "difficulty": "blue",
-          "groomed": false,
+          "groomed": true,
           "status": "open",
           "zone": "Lookout & Village"
         },
@@ -1414,6 +1444,10 @@
       "skiableAcres": 4200,
       "distanceFromBanffKm": 58,
       "driveMinutesFromBanff": 42,
+      "hubName": "Banff",
+      "hubNameZh": "班夫镇",
+      "distanceFromHubKm": 58,
+      "driveMinutesFromHub": 42,
       "officialUrl": "https://www.skilouise.com/snow-conditions/",
       "geojsonUrl": "/geojson/lakelouise.geojson",
       "webcams": [
@@ -1447,7 +1481,7 @@
         "baseCm": 23,
         "upperBaseCm": 28,
         "seasonCm": 44,
-        "forecast7dCm": 0.4
+        "forecast7dCm": 4.7
       },
       "terrain": {
         "runsOpen": 6,
@@ -1460,75 +1494,75 @@
       },
       "weather": {
         "tempCurrentC": -11,
-        "tempSummitC": -15.9,
-        "tempBaseC": -11.1,
+        "tempSummitC": -16.9,
+        "tempBaseC": -12.1,
         "tempHighC": -11,
-        "feelsLikeC": -21,
-        "windKmh": 8,
-        "windGustKmh": 9,
-        "weatherCode": 2,
+        "feelsLikeC": -22,
+        "windKmh": 6,
+        "windGustKmh": 8,
+        "weatherCode": 0,
         "summary": "Cold & Crisp Alpine Snow",
         "dailyForecast": [
           {
-            "date": "2026-11-20",
-            "weatherCode": 3,
-            "tempMaxC": -10,
-            "tempMinC": -18,
-            "snowCm": 0,
-            "windMaxKmh": 15
-          },
-          {
             "date": "2026-11-21",
             "weatherCode": 1,
-            "tempMaxC": -12,
-            "tempMinC": -21,
+            "tempMaxC": -11,
+            "tempMinC": -19,
             "snowCm": 0,
-            "windMaxKmh": 6
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-22",
-            "weatherCode": 0,
+            "weatherCode": 3,
             "tempMaxC": -11,
-            "tempMinC": -21,
+            "tempMinC": -20,
             "snowCm": 0,
             "windMaxKmh": 7
           },
           {
             "date": "2026-11-23",
-            "weatherCode": 3,
+            "weatherCode": 71,
             "tempMaxC": -10,
-            "tempMinC": -20,
-            "snowCm": 0,
-            "windMaxKmh": 8
+            "tempMinC": -18,
+            "snowCm": 0.5,
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-24",
-            "weatherCode": 3,
-            "tempMaxC": -8,
-            "tempMinC": -18,
-            "snowCm": 0,
-            "windMaxKmh": 8
+            "weatherCode": 71,
+            "tempMaxC": -7,
+            "tempMinC": -14,
+            "snowCm": 0.4,
+            "windMaxKmh": 11
           },
           {
             "date": "2026-11-25",
-            "weatherCode": 45,
-            "tempMaxC": -7,
-            "tempMinC": -15,
-            "snowCm": 0,
-            "windMaxKmh": 8
+            "weatherCode": 71,
+            "tempMaxC": -6,
+            "tempMinC": -10,
+            "snowCm": 0.9,
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-26",
             "weatherCode": 71,
             "tempMaxC": -6,
-            "tempMinC": -12,
-            "snowCm": 0.4,
-            "windMaxKmh": 7
+            "tempMinC": -8,
+            "snowCm": 0.9,
+            "windMaxKmh": 10
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 73,
+            "tempMaxC": -4,
+            "tempMinC": -9,
+            "snowCm": 2,
+            "windMaxKmh": 10
           }
         ]
       },
       "notes": "Grizzly Gondola is now open with access to Deer Run and Lower Flight (both are rated blue at this time). Glacier Chair, Juniper Chair and the Magic Carpet are also open, with 6 runs open across the resort. More terrain will open as conditions allow.",
-      "lastUpdated": "November 20, 2026 5:10 am MT",
+      "lastUpdated": "November 21, 2026 8:00 am MT",
       "dailyRunReportPdf": "https://lamp10.skilouise.com/conditions/run_report.pdf",
       "dailyGroomingPdf": "https://lamp10.skilouise.com/conditions/grooming_report.pdf",
       "lifts": [
@@ -1590,7 +1624,7 @@
         },
         {
           "name": "Paradise Triple",
-          "normName": "paradisetriple",
+          "normName": "paradise",
           "status": "closed",
           "hours": "9:00am - 4:00pm",
           "liftType": "chair_lift",
@@ -1663,8 +1697,8 @@
           "zone": "Front Side"
         },
         {
-          "name": "Upper Wiwaxy",
-          "normName": "upperwiwaxy",
+          "name": "Wiwaxy",
+          "normName": "wiwaxy",
           "difficulty": "green",
           "groomed": false,
           "status": "open",
@@ -2791,6 +2825,14 @@
           "zone": "Front Side"
         },
         {
+          "name": "Upper Wiwaxy",
+          "normName": "upperwiwaxy",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Front Side"
+        },
+        {
           "name": "Upshoots",
           "normName": "upshoots",
           "difficulty": "black",
@@ -2879,14 +2921,6 @@
           "zone": "Back Bowls & Whitehorn"
         },
         {
-          "name": "Wiwaxy",
-          "normName": "wiwaxy",
-          "difficulty": "green",
-          "groomed": false,
-          "status": "closed",
-          "zone": "Front Side"
-        },
-        {
           "name": "Wolverine",
           "normName": "wolverine",
           "difficulty": "blue",
@@ -2939,6 +2973,10 @@
       "skiableAcres": 190,
       "distanceFromBanffKm": 6,
       "driveMinutesFromBanff": 10,
+      "hubName": "Banff",
+      "hubNameZh": "班夫镇",
+      "distanceFromHubKm": 6,
+      "driveMinutesFromHub": 10,
       "officialUrl": "https://banffnorquay.com/conditions/",
       "geojsonUrl": "/geojson/norquay.geojson",
       "webcams": [
@@ -2966,7 +3004,7 @@
       "status": "open",
       "snow": {
         "overnightCm": 0,
-        "snow24hCm": 0,
+        "snow24hCm": 1,
         "snow48hCm": 0,
         "snow7dCm": 8,
         "baseCm": 30,
@@ -2975,70 +3013,62 @@
         "forecast7dCm": 0
       },
       "terrain": {
-        "runsOpen": 2,
+        "runsOpen": 3,
         "runsTotal": 80,
-        "runsOpenPct": 3,
-        "groomedCount": 2,
+        "runsOpenPct": 4,
+        "groomedCount": 3,
         "liftsOpen": 2,
         "liftsTotal": 7,
         "liftsOpenPct": 29
       },
       "weather": {
         "tempCurrentC": -7,
-        "tempSummitC": -12,
-        "tempBaseC": -9.5,
+        "tempSummitC": -13.4,
+        "tempBaseC": -10.9,
         "tempHighC": -7,
-        "feelsLikeC": -17,
-        "windKmh": 9,
-        "windGustKmh": 16,
-        "weatherCode": 1,
+        "feelsLikeC": -18,
+        "windKmh": 5,
+        "windGustKmh": 5,
+        "weatherCode": 0,
         "summary": "Crisp Alpine Conditions",
         "dailyForecast": [
           {
-            "date": "2026-11-20",
-            "weatherCode": 3,
-            "tempMaxC": -7,
-            "tempMinC": -13,
-            "snowCm": 0,
-            "windMaxKmh": 14
-          },
-          {
             "date": "2026-11-21",
             "weatherCode": 45,
-            "tempMaxC": -11,
-            "tempMinC": -17,
+            "tempMaxC": -9,
+            "tempMinC": -14,
             "snowCm": 0,
-            "windMaxKmh": 13
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-22",
             "weatherCode": 3,
-            "tempMaxC": -9,
-            "tempMinC": -18,
+            "tempMaxC": -10,
+            "tempMinC": -15,
             "snowCm": 0,
-            "windMaxKmh": 7
+            "windMaxKmh": 10
           },
           {
             "date": "2026-11-23",
             "weatherCode": 3,
-            "tempMaxC": -5,
-            "tempMinC": -14,
+            "tempMaxC": -6,
+            "tempMinC": -13,
             "snowCm": 0,
-            "windMaxKmh": 10
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-24",
             "weatherCode": 3,
-            "tempMaxC": -5,
-            "tempMinC": -13,
+            "tempMaxC": -3,
+            "tempMinC": -11,
             "snowCm": 0,
-            "windMaxKmh": 10
+            "windMaxKmh": 12
           },
           {
             "date": "2026-11-25",
             "weatherCode": 3,
             "tempMaxC": -2,
-            "tempMinC": -11,
+            "tempMinC": -9,
             "snowCm": 0,
             "windMaxKmh": 12
           },
@@ -3046,14 +3076,22 @@
             "date": "2026-11-26",
             "weatherCode": 3,
             "tempMaxC": -2,
-            "tempMinC": -8,
+            "tempMinC": -7,
             "snowCm": 0,
-            "windMaxKmh": 10
+            "windMaxKmh": 13
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 3,
+            "tempMaxC": 0,
+            "tempMinC": -7,
+            "snowCm": 0,
+            "windMaxKmh": 13
           }
         ]
       },
-      "notes": "We have 2 runs open, Cascade and Sundance, with a 30–35 cm base. Lifts run 9:30 a.m.–4:30 p.",
-      "lastUpdated": "2026-11-21T03:35:42.978Z",
+      "notes": "",
+      "lastUpdated": "2026-11-22T01:48:43.320Z",
       "dailyRunReportPdf": null,
       "dailyGroomingPdf": null,
       "lifts": [
@@ -3439,8 +3477,8 @@
           "name": "Zoomer",
           "normName": "zoomer",
           "difficulty": "blue",
-          "groomed": false,
-          "status": "closed",
+          "groomed": true,
+          "status": "open",
           "zone": "Cascade Chair"
         },
         {
@@ -3738,6 +3776,2001 @@
           "groomed": false,
           "status": "closed",
           "zone": "Rundle Carpet"
+        }
+      ]
+    },
+    {
+      "id": "bluemountain",
+      "regionId": "toronto",
+      "name": "Blue Mountain Resort",
+      "nameZh": "蓝山滑雪度假村",
+      "shortName": "Blue Mountain",
+      "tagline": "安省最大高山滑雪度假村 · 尼亚加拉断崖 43 条雪道与全山夜滑",
+      "taglineEn": "Ontario’s Largest Mountain Resort · 43 Trails & Night Skiing on Georgian Bay",
+      "coordinates": [
+        -80.316,
+        44.501
+      ],
+      "mapViewport": {
+        "center": [
+          -80.316,
+          44.5
+        ],
+        "zoom": 14,
+        "pitch": 46,
+        "bearing": -125
+      },
+      "elevationBaseM": 230,
+      "elevationSummitM": 450,
+      "verticalDropM": 220,
+      "skiableAcres": 365,
+      "distanceFromBanffKm": 158,
+      "driveMinutesFromBanff": 115,
+      "hubName": "Toronto",
+      "hubNameZh": "多伦多",
+      "distanceFromHubKm": 158,
+      "driveMinutesFromHub": 115,
+      "officialUrl": "https://www.bluemountain.ca/mountain/mountain-report",
+      "geojsonUrl": "/geojson/bluemountain.geojson",
+      "webcams": [
+        {
+          "id": "bm-village",
+          "title": "Village Base 蓝山度假村大本营",
+          "url": "https://i.ytimg.com/vi/52ar9bJWTIA/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/watch?v=52ar9bJWTIA"
+        },
+        {
+          "id": "bm-south",
+          "title": "South Base 南坡大本营",
+          "url": "https://i.ytimg.com/vi/fVzgIfHAG3U/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/watch?v=fVzgIfHAG3U"
+        },
+        {
+          "id": "bm-valley",
+          "title": "Valley Express 谷底高速缆车",
+          "url": "https://i.ytimg.com/vi/yYxZrTBne3I/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/watch?v=yYxZrTBne3I"
+        },
+        {
+          "id": "bm-calamity",
+          "title": "Calamity Lane 断崖陡坡视角",
+          "url": "https://i.ytimg.com/vi/ezyjNLLIUh0/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/watch?v=ezyjNLLIUh0"
+        }
+      ],
+      "status": "closed",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 0,
+        "baseCm": 0,
+        "upperBaseCm": 0,
+        "seasonCm": 0,
+        "forecast7dCm": 1.3
+      },
+      "terrain": {
+        "runsOpen": 0,
+        "runsTotal": 43,
+        "runsOpenPct": 0,
+        "groomedCount": 0,
+        "liftsOpen": 0,
+        "liftsTotal": 11,
+        "liftsOpenPct": 0
+      },
+      "weather": {
+        "tempCurrentC": 13,
+        "tempSummitC": 12.4,
+        "tempBaseC": 13.7,
+        "tempHighC": 16,
+        "feelsLikeC": 5,
+        "windKmh": 34,
+        "windGustKmh": 47,
+        "weatherCode": 0,
+        "summary": "Clear",
+        "dailyForecast": [
+          {
+            "date": "2026-11-21",
+            "weatherCode": 0,
+            "tempMaxC": 16,
+            "tempMinC": 8,
+            "snowCm": 0,
+            "windMaxKmh": 41
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 53,
+            "tempMaxC": 15,
+            "tempMinC": 6,
+            "snowCm": 0,
+            "windMaxKmh": 39
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 85,
+            "tempMaxC": 6,
+            "tempMinC": -1,
+            "snowCm": 0.6,
+            "windMaxKmh": 31
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 85,
+            "tempMaxC": 0,
+            "tempMinC": -4,
+            "snowCm": 0.3,
+            "windMaxKmh": 18
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 3,
+            "tempMaxC": 1,
+            "tempMinC": -5,
+            "snowCm": 0,
+            "windMaxKmh": 19
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 71,
+            "tempMaxC": 4,
+            "tempMinC": -4,
+            "snowCm": 0.1,
+            "windMaxKmh": 24
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 71,
+            "tempMaxC": 3,
+            "tempMinC": 0,
+            "snowCm": 0.3,
+            "windMaxKmh": 23
+          }
+        ]
+      },
+      "notes": "Winter snowmaking & grooming preparations underway on the Niagara Escarpment; check 7-day forecast for upcoming snowmaking windows.",
+      "lastUpdated": "2026-11-21 20:43 ET",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "Orchard Express",
+          "normName": "orchard",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Explorer",
+          "normName": "explorer",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "magic_carpet",
+          "zone": "South"
+        },
+        {
+          "name": "Little Ripper",
+          "normName": "littleripper",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "magic_carpet",
+          "zone": "South"
+        },
+        {
+          "name": "Southern Comfort",
+          "normName": "southerncomfort",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "South"
+        },
+        {
+          "name": "Voyageur",
+          "normName": "voyageur",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "South"
+        },
+        {
+          "name": "Easy Rider",
+          "normName": "easyrider",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "magic_carpet",
+          "zone": "Village"
+        },
+        {
+          "name": "Graduate",
+          "normName": "graduate",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "Village"
+        },
+        {
+          "name": "Silver Bullet",
+          "normName": "silverbullet",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "Village"
+        },
+        {
+          "name": "Undergrad",
+          "normName": "undergrad",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "magic_carpet",
+          "zone": "Village"
+        },
+        {
+          "name": "Valley Express",
+          "normName": "valley",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "Valley"
+        },
+        {
+          "name": "Weider Express",
+          "normName": "weider",
+          "status": "closed",
+          "hours": "9:00am - 4:30pm",
+          "liftType": "chair_lift",
+          "zone": "North"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Badlands Terrain Park",
+          "normName": "badlandsterrainpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Butternut",
+          "normName": "butternut",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Finally",
+          "normName": "finally",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Founders",
+          "normName": "founders",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Gord's Groove",
+          "normName": "gordsgroove",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Grove Terrain Park",
+          "normName": "groveterrainpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Juicer",
+          "normName": "juicer",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Lower Orchard Glades",
+          "normName": "lowerorchardglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Southern Cross",
+          "normName": "southerncross",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Upper Orchard Glades",
+          "normName": "upperorchardglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Orchard"
+        },
+        {
+          "name": "Bear Trail Glades",
+          "normName": "beartrailglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Big Baby",
+          "normName": "bigbaby",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Crooked Oak",
+          "normName": "crookedoak",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Cruiser",
+          "normName": "cruiser",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Dr. Doug",
+          "normName": "drdoug",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Enchanted Forest",
+          "normName": "enchantedforest",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Explorer",
+          "normName": "explorer",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Little Ripper",
+          "normName": "littleripper",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Mary Jane's Lane",
+          "normName": "maryjaneslane",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Old South Glades",
+          "normName": "oldsouthglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Sunrise",
+          "normName": "sunrise",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Waterfall",
+          "normName": "waterfall",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "South"
+        },
+        {
+          "name": "Easy Rider",
+          "normName": "easyrider",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Graduate",
+          "normName": "graduate",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "L-Hill",
+          "normName": "lhill",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "L-Park",
+          "normName": "lpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Memory Lane",
+          "normName": "memorylane",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Rinus Run",
+          "normName": "rinusrun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Showcase Glades",
+          "normName": "showcaseglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Smart Alec",
+          "normName": "smartalec",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Susan's Hideaway",
+          "normName": "susanshideaway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Tranquility",
+          "normName": "tranquility",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Undergrad",
+          "normName": "undergrad",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Village Glades",
+          "normName": "villageglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Village Way",
+          "normName": "villageway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Yahoo Terrain Park",
+          "normName": "yahooterrainpark",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Yahoo Trail",
+          "normName": "yahootrail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Village"
+        },
+        {
+          "name": "Apple Bowl",
+          "normName": "applebowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Burner",
+          "normName": "burner",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Calamity Lane",
+          "normName": "calamitylane",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Due North",
+          "normName": "duenorth",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Happy Valley",
+          "normName": "happyvalley",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Legacy",
+          "normName": "legacy",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Willy's",
+          "normName": "willys",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Valley"
+        },
+        {
+          "name": "Avalanche",
+          "normName": "avalanche",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Dieppe",
+          "normName": "dieppe",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Dog Sled",
+          "normName": "dogsled",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Elevator Shaft",
+          "normName": "elevatorshaft",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Going South",
+          "normName": "goingsouth",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Going South Glades",
+          "normName": "goingsouthglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Hog's Back",
+          "normName": "hogsback",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Kandahar",
+          "normName": "kandahar",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Little Devil",
+          "normName": "littledevil",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Lone Rider",
+          "normName": "lonerider",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "North Glades",
+          "normName": "northglades",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Rabbits Run",
+          "normName": "rabbitsrun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Schuss",
+          "normName": "schuss",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Senator / Larway",
+          "normName": "senatorlarway",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Spectacular",
+          "normName": "spectacular",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        },
+        {
+          "name": "Starting Gate",
+          "normName": "startinggate",
+          "difficulty": "double-black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "North"
+        }
+      ]
+    },
+    {
+      "id": "mslm",
+      "regionId": "toronto",
+      "name": "Mount St. Louis Moonstone",
+      "nameZh": "圣路易斯月石山滑雪场",
+      "shortName": "Mt. St. Louis",
+      "tagline": "安省粉雪带口碑王牌 · 高速 8 人加热吊椅与顶级地形公园",
+      "taglineEn": "Ontario Snowbelt Favorite · 8-Pack Heated Express Chair & Premier Terrain Parks",
+      "coordinates": [
+        -79.669,
+        44.625
+      ],
+      "mapViewport": {
+        "center": [
+          -79.6685,
+          44.626
+        ],
+        "zoom": 14.5,
+        "pitch": 46,
+        "bearing": -60
+      },
+      "elevationBaseM": 227,
+      "elevationSummitM": 395,
+      "verticalDropM": 168,
+      "skiableAcres": 170,
+      "distanceFromBanffKm": 132,
+      "driveMinutesFromBanff": 80,
+      "hubName": "Toronto",
+      "hubNameZh": "多伦多",
+      "distanceFromHubKm": 132,
+      "driveMinutesFromHub": 80,
+      "officialUrl": "https://www.mountstlouis.com/status/",
+      "geojsonUrl": "/geojson/mslm.geojson",
+      "webcams": [
+        {
+          "id": "mslm-base",
+          "title": "St. Louis Base 圣路易斯大本营",
+          "url": "https://mountstlouis.com/webcams-upload/mslm-base/image-1.jpg"
+        },
+        {
+          "id": "mslm-moonstone",
+          "title": "Moonstone Base 月石大本营",
+          "url": "https://mountstlouis.com/webcams-upload/moonstone-base/image-1.jpg"
+        },
+        {
+          "id": "mslm-adv",
+          "title": "Adventure 8 高速八人缆车山顶",
+          "url": "https://mountstlouis.com/webcams-upload/adventure-top/image-1.jpg"
+        },
+        {
+          "id": "mslm-park",
+          "title": "Outback / Junkyard 地形公园",
+          "url": "https://mountstlouis.com/webcams-upload/junkyard/image-1.jpg"
+        }
+      ],
+      "status": "closed",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 0,
+        "baseCm": 0,
+        "upperBaseCm": 0,
+        "seasonCm": 0,
+        "forecast7dCm": 0.9
+      },
+      "terrain": {
+        "runsOpen": 0,
+        "runsTotal": 37,
+        "runsOpenPct": 0,
+        "groomedCount": 0,
+        "liftsOpen": 0,
+        "liftsTotal": 12,
+        "liftsOpenPct": 0
+      },
+      "weather": {
+        "tempCurrentC": 6.8,
+        "tempSummitC": 6.8,
+        "tempBaseC": 7.8,
+        "tempHighC": 15,
+        "feelsLikeC": 3,
+        "windKmh": 11,
+        "windGustKmh": 24,
+        "weatherCode": 0,
+        "summary": "Ontario Snowbelt",
+        "dailyForecast": [
+          {
+            "date": "2026-11-21",
+            "weatherCode": 0,
+            "tempMaxC": 15,
+            "tempMinC": 2,
+            "snowCm": 0,
+            "windMaxKmh": 18
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 3,
+            "tempMaxC": 15,
+            "tempMinC": 5,
+            "snowCm": 0,
+            "windMaxKmh": 24
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 85,
+            "tempMaxC": 8,
+            "tempMinC": -3,
+            "snowCm": 0.9,
+            "windMaxKmh": 26
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 3,
+            "tempMaxC": 1,
+            "tempMinC": -4,
+            "snowCm": 0,
+            "windMaxKmh": 19
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 3,
+            "tempMaxC": 1,
+            "tempMinC": -4,
+            "snowCm": 0,
+            "windMaxKmh": 21
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 51,
+            "tempMaxC": 4,
+            "tempMinC": 0,
+            "snowCm": 0,
+            "windMaxKmh": 24
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 61,
+            "tempMaxC": 3,
+            "tempMinC": 0,
+            "snowCm": 0,
+            "windMaxKmh": 22
+          }
+        ]
+      },
+      "notes": "Snowbelt snowmaking guns primed across Mount St. Louis & Moonstone; historically one of the earliest resorts to open in Ontario.",
+      "lastUpdated": "Live Status Report",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "Kinder B",
+          "normName": "kinderb",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Kinder A",
+          "normName": "kindera",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Magic Carpet",
+          "normName": "magic",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Gentle Ben",
+          "normName": "gentleben",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Sundance",
+          "normName": "sundance",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Summit Express",
+          "normName": "summit",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Josl Huter Express",
+          "normName": "joslhuter",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Butternut Carpet Lift",
+          "normName": "butternut",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Elfriede Huter Express",
+          "normName": "elfriedehuter",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Adventure 8",
+          "normName": "adventure8",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Novice Carpet",
+          "normName": "novice",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Promenade Express",
+          "normName": "promenade",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Moonstone"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Follow Me",
+          "normName": "followme",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Magic Slope",
+          "normName": "magicslope",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Kinder Slope",
+          "normName": "kinderslope",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Gentle Ben",
+          "normName": "gentleben",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Sundance",
+          "normName": "sundance",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Saint",
+          "normName": "saint",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "West Arm",
+          "normName": "westarm",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Thunderball",
+          "normName": "thunderball",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Upper Timberline",
+          "normName": "uppertimberline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Timberline",
+          "normName": "timberline",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Snowbowl",
+          "normName": "snowbowl",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Tiroler",
+          "normName": "tiroler",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "T-Bar Alley",
+          "normName": "alley",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "West Peak Run",
+          "normName": "westpeakrun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "East Peak Run",
+          "normName": "eastpeakrun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Stretcher",
+          "normName": "stretcher",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Yodler",
+          "normName": "yodler",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "North Peak Run",
+          "normName": "northpeakrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Mount St. Louis"
+        },
+        {
+          "name": "Holiday",
+          "normName": "holiday",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Mount St. Louis Crossover",
+          "normName": "mountstlouiscrossover",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Adventure Run",
+          "normName": "adventurerun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Louis Express",
+          "normName": "louis",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Moonstone Crossover",
+          "normName": "moonstonecrossover",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Turkey Chute",
+          "normName": "turkeychute",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Ridge Run",
+          "normName": "ridgerun",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Venture Mogul",
+          "normName": "venturemogul",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Venture",
+          "normName": "venture",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Easy Out",
+          "normName": "easyout",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Promenade",
+          "normName": "promenade",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Smart Alec",
+          "normName": "smartalec",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Drifter",
+          "normName": "drifter",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Big Lonely",
+          "normName": "biglonely",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Crescent",
+          "normName": "crescent",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Elfie's Way",
+          "normName": "elfiesway",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Easy Street",
+          "normName": "easystreet",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Butternut slope",
+          "normName": "butternutslope",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        },
+        {
+          "name": "Novice Slope",
+          "normName": "noviceslope",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Moonstone"
+        }
+      ]
+    },
+    {
+      "id": "horseshoe",
+      "regionId": "toronto",
+      "name": "Horseshoe Valley Resort",
+      "nameZh": "马蹄谷滑雪度假村",
+      "shortName": "Horseshoe Valley",
+      "tagline": "距多伦多仅 1 小时车程 · 巴里雪带家庭友好雪道与夜滑胜地",
+      "taglineEn": "1 Hour North of Toronto · Barrie Snowbelt Groomers, Glades & Night Skiing",
+      "coordinates": [
+        -79.674,
+        44.548
+      ],
+      "mapViewport": {
+        "center": [
+          -79.6738,
+          44.5475
+        ],
+        "zoom": 14.9,
+        "pitch": 45,
+        "bearing": 155
+      },
+      "elevationBaseM": 311,
+      "elevationSummitM": 405,
+      "verticalDropM": 94,
+      "skiableAcres": 100,
+      "distanceFromBanffKm": 112,
+      "driveMinutesFromBanff": 68,
+      "hubName": "Toronto",
+      "hubNameZh": "多伦多",
+      "distanceFromHubKm": 112,
+      "driveMinutesFromHub": 68,
+      "officialUrl": "https://horseshoeresort.com/ski-report-trails/",
+      "geojsonUrl": "/geojson/horseshoe.geojson",
+      "webcams": [
+        {
+          "id": "hs-chalet",
+          "title": "Main Chalet 主木屋与雪坡直播",
+          "url": "https://i.ytimg.com/vi/B2EggpbHHhQ/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/watch?v=B2EggpbHHhQ"
+        },
+        {
+          "id": "hs-alpine",
+          "title": "Alpine Slopes 雪道实时直播",
+          "url": "https://i.ytimg.com/vi/RnvgDV96v-Q/hqdefault.jpg",
+          "linkUrl": "https://www.youtube.com/live/RnvgDV96v-Q"
+        }
+      ],
+      "status": "closed",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 0,
+        "baseCm": 0,
+        "upperBaseCm": 0,
+        "seasonCm": 0,
+        "forecast7dCm": 2
+      },
+      "terrain": {
+        "runsOpen": 0,
+        "runsTotal": 27,
+        "runsOpenPct": 0,
+        "groomedCount": 0,
+        "liftsOpen": 0,
+        "liftsTotal": 6,
+        "liftsOpenPct": 0
+      },
+      "weather": {
+        "tempCurrentC": 7.4,
+        "tempSummitC": 7.4,
+        "tempBaseC": 8,
+        "tempHighC": 15,
+        "feelsLikeC": 3,
+        "windKmh": 20,
+        "windGustKmh": 30,
+        "weatherCode": 0,
+        "summary": "Barrie Snowbelt",
+        "dailyForecast": [
+          {
+            "date": "2026-11-21",
+            "weatherCode": 0,
+            "tempMaxC": 15,
+            "tempMinC": 4,
+            "snowCm": 0,
+            "windMaxKmh": 21
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 45,
+            "tempMaxC": 14,
+            "tempMinC": 6,
+            "snowCm": 0,
+            "windMaxKmh": 27
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 85,
+            "tempMaxC": 8,
+            "tempMinC": -3,
+            "snowCm": 2,
+            "windMaxKmh": 28
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 45,
+            "tempMaxC": 1,
+            "tempMinC": -5,
+            "snowCm": 0,
+            "windMaxKmh": 19
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 3,
+            "tempMaxC": 1,
+            "tempMinC": -4,
+            "snowCm": 0,
+            "windMaxKmh": 21
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 51,
+            "tempMaxC": 4,
+            "tempMinC": 0,
+            "snowCm": 0,
+            "windMaxKmh": 24
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 61,
+            "tempMaxC": 3,
+            "tempMinC": 0,
+            "snowCm": 0,
+            "windMaxKmh": 22
+          }
+        ]
+      },
+      "notes": "Alpine Hours: Closed for the season.",
+      "lastUpdated": "Live Alpine Report",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "Kimbles Carpet",
+          "normName": "kimbles",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Horseshoe Valley"
+        },
+        {
+          "name": "Snow School Express",
+          "normName": "snowschool",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "magic_carpet",
+          "zone": "Horseshoe Valley"
+        },
+        {
+          "name": "Double Chair",
+          "normName": "double",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Horseshoe Valley"
+        },
+        {
+          "name": "Copeland Express 6 Person Chair",
+          "normName": "copeland",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Horseshoe Valley"
+        },
+        {
+          "name": "High Rider Quad",
+          "normName": "highrider",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Horseshoe Valley"
+        },
+        {
+          "name": "Highland Express Quad",
+          "normName": "highland",
+          "status": "closed",
+          "hours": "9:00am - 9:00pm",
+          "liftType": "chair_lift",
+          "zone": "Horseshoe Valley"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Ponyback",
+          "normName": "ponyback",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Pinto",
+          "normName": "pinto",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Hungry Hollow",
+          "normName": "hungryhollow",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Roundup",
+          "normName": "roundup",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Donkey Serenade",
+          "normName": "donkeyserenade",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Pony Express",
+          "normName": "pony",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Canter",
+          "normName": "canter",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Mule Train",
+          "normName": "muletrain",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Steeplechase",
+          "normName": "steeplechase",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Flying Mare",
+          "normName": "flyingmare",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Pony Tail",
+          "normName": "ponytail",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Ramey's Return",
+          "normName": "rameysreturn",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Saddleback",
+          "normName": "saddleback",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Stallion Slide",
+          "normName": "stallionslide",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Duster",
+          "normName": "duster",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Nightmare Ride",
+          "normName": "nightmareride",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Stampede",
+          "normName": "stampede",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "The Wave",
+          "normName": "wave",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Shaggy Mane",
+          "normName": "shaggymane",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "The Zipper",
+          "normName": "zipper",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Bushwacker",
+          "normName": "bushwacker",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Bronco",
+          "normName": "bronco",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Rodeo",
+          "normName": "rodeo",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Race Hill",
+          "normName": "racehill",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Horsefeathers",
+          "normName": "horsefeathers",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Main Alpine"
+        },
+        {
+          "name": "Horsefly Hop",
+          "normName": "horseflyhop",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Terrain Park"
+        },
+        {
+          "name": "Bullpen",
+          "normName": "bullpen",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Terrain Park"
+        }
+      ]
+    },
+    {
+      "id": "gleneden",
+      "regionId": "toronto",
+      "name": "Glen Eden",
+      "nameZh": "格伦伊登滑雪场",
+      "shortName": "Glen Eden",
+      "tagline": "大多伦多西区最近雪场（Milton）· 40 分钟直达下班夜滑首选",
+      "taglineEn": "Closest Hills to West GTA in Milton · 40-Min Commute for After-Work Night Laps",
+      "coordinates": [
+        -79.943,
+        43.504
+      ],
+      "mapViewport": {
+        "center": [
+          -79.9425,
+          43.5042
+        ],
+        "zoom": 15.2,
+        "pitch": 45,
+        "bearing": -20
+      },
+      "elevationBaseM": 232,
+      "elevationSummitM": 305,
+      "verticalDropM": 73,
+      "skiableAcres": 45,
+      "distanceFromBanffKm": 62,
+      "driveMinutesFromBanff": 42,
+      "hubName": "Toronto",
+      "hubNameZh": "多伦多",
+      "distanceFromHubKm": 62,
+      "driveMinutesFromHub": 42,
+      "officialUrl": "https://gleneden.on.ca/at-glen-eden/slope-conditions/",
+      "geojsonUrl": "/geojson/gleneden.geojson",
+      "webcams": [],
+      "status": "closed",
+      "snow": {
+        "overnightCm": 0,
+        "snow24hCm": 0,
+        "snow48hCm": 0,
+        "snow7dCm": 0,
+        "baseCm": 0,
+        "upperBaseCm": 0,
+        "seasonCm": 0,
+        "forecast7dCm": 0.2
+      },
+      "terrain": {
+        "runsOpen": 0,
+        "runsTotal": 17,
+        "runsOpenPct": 0,
+        "groomedCount": 0,
+        "liftsOpen": 0,
+        "liftsTotal": 6,
+        "liftsOpenPct": 0
+      },
+      "weather": {
+        "tempCurrentC": 3.5,
+        "tempSummitC": 3.5,
+        "tempBaseC": 3.9,
+        "tempHighC": 14,
+        "feelsLikeC": 1,
+        "windKmh": 2,
+        "windGustKmh": 2,
+        "weatherCode": 0,
+        "summary": "Halton Escarpment",
+        "dailyForecast": [
+          {
+            "date": "2026-11-21",
+            "weatherCode": 45,
+            "tempMaxC": 14,
+            "tempMinC": 2,
+            "snowCm": 0,
+            "windMaxKmh": 12
+          },
+          {
+            "date": "2026-11-22",
+            "weatherCode": 3,
+            "tempMaxC": 16,
+            "tempMinC": 2,
+            "snowCm": 0,
+            "windMaxKmh": 22
+          },
+          {
+            "date": "2026-11-23",
+            "weatherCode": 3,
+            "tempMaxC": 10,
+            "tempMinC": -1,
+            "snowCm": 0,
+            "windMaxKmh": 27
+          },
+          {
+            "date": "2026-11-24",
+            "weatherCode": 3,
+            "tempMaxC": 3,
+            "tempMinC": -3,
+            "snowCm": 0,
+            "windMaxKmh": 16
+          },
+          {
+            "date": "2026-11-25",
+            "weatherCode": 3,
+            "tempMaxC": 3,
+            "tempMinC": -3,
+            "snowCm": 0,
+            "windMaxKmh": 24
+          },
+          {
+            "date": "2026-11-26",
+            "weatherCode": 71,
+            "tempMaxC": 4,
+            "tempMinC": 0,
+            "snowCm": 0.2,
+            "windMaxKmh": 27
+          },
+          {
+            "date": "2026-11-27",
+            "weatherCode": 61,
+            "tempMaxC": 5,
+            "tempMinC": 1,
+            "snowCm": 0,
+            "windMaxKmh": 28
+          }
+        ]
+      },
+      "notes": "Closest ski hills to West GTA in Kelso Conservation Area (Milton); night skiing runs until 9:30pm once winter snowmaking begins.",
+      "lastUpdated": "Sun 22 Nov, 1:34 AM UTC",
+      "dailyRunReportPdf": null,
+      "dailyGroomingPdf": null,
+      "lifts": [
+        {
+          "name": "Limestone Chairlift",
+          "normName": "limestone",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "chair_lift",
+          "zone": "Glen Eden"
+        },
+        {
+          "name": "Ridge Chairlift",
+          "normName": "ridge",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "chair_lift",
+          "zone": "Glen Eden"
+        },
+        {
+          "name": "Updraft Chairlift",
+          "normName": "updraft",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "chair_lift",
+          "zone": "Glen Eden"
+        },
+        {
+          "name": "Shuttle Carpet",
+          "normName": "shuttle",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "magic_carpet",
+          "zone": "Glen Eden"
+        },
+        {
+          "name": "Caterpillar Carpet",
+          "normName": "caterpillar",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "magic_carpet",
+          "zone": "Glen Eden"
+        },
+        {
+          "name": "Cricket Carpet",
+          "normName": "cricket",
+          "status": "closed",
+          "hours": "8:30am - 9:30pm",
+          "liftType": "magic_carpet",
+          "zone": "Glen Eden"
+        }
+      ],
+      "trails": [
+        {
+          "name": "Escarpment Run",
+          "normName": "escarpmentrun",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Night Hawk",
+          "normName": "nighthawk",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Butternut",
+          "normName": "butternut",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Falcon",
+          "normName": "falcon",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Scimitar",
+          "normName": "scimitar",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Sidewinder",
+          "normName": "sidewinder",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Twister",
+          "normName": "twister",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Boomerang",
+          "normName": "boomerang",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Challenger",
+          "normName": "challenger",
+          "difficulty": "black",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Escarpment"
+        },
+        {
+          "name": "Quarry Run",
+          "normName": "quarryrun",
+          "difficulty": "blue",
+          "groomed": false,
+          "status": "closed",
+          "zone": "Terrain Park"
+        },
+        {
+          "name": "Comet",
+          "normName": "comet",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "The Galaxy"
+        },
+        {
+          "name": "Little Dipper",
+          "normName": "littledipper",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "The Galaxy"
+        },
+        {
+          "name": "Milky Way",
+          "normName": "milkyway",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "The Galaxy"
+        },
+        {
+          "name": "Shooting Star",
+          "normName": "shootingstar",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "The Galaxy"
+        },
+        {
+          "name": "Bumble Bee",
+          "normName": "bumblebee",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "West Beginner Area"
+        },
+        {
+          "name": "Grasshopper",
+          "normName": "grasshopper",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "West Beginner Area"
+        },
+        {
+          "name": "Monarch",
+          "normName": "monarch",
+          "difficulty": "green",
+          "groomed": false,
+          "status": "closed",
+          "zone": "West Beginner Area"
         }
       ]
     }

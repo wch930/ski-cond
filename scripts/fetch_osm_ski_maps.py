@@ -25,17 +25,47 @@ RESORTS = {
         "name": "Mt. Norquay",
         "bbox": (-115.620, 51.190, -115.585, 51.218),
     },
+    "bluemountain": {
+        "name": "Blue Mountain Resort",
+        "bbox": (-80.3335, 44.4870, -80.2980, 44.5112),
+        # Exclude neighboring private Toronto Ski Club / Craigleith north-west of Weider Express
+        "max_lat": 44.5109,
+    },
+    "mslm": {
+        "name": "Mount St. Louis Moonstone",
+        "bbox": (-79.6800, 44.6150, -79.6450, 44.6400),
+    },
+    "horseshoe": {
+        "name": "Horseshoe Valley Resort",
+        # Tightened west edge (-79.6795) excludes private Heights of Horseshoe club next door
+        "bbox": (-79.6795, 44.5410, -79.6640, 44.5540),
+    },
+    "gleneden": {
+        "name": "Glen Eden",
+        "bbox": (-79.9480, 43.4960, -79.9280, 43.5120),
+    },
 }
 
 EXCLUDED_AERIALWAYS = {"pylon", "station", "goods", "zip_line", "canopy", "rope_tow_unused"}
 
-# Disambiguate generic OSM "Magic Carpet" ways by OSM way ID so only open carpets light up
+# Disambiguate generic OSM carpet/lift names by OSM way ID so live status matches 1:1
 LIFT_NAME_OVERRIDES = {
     258174501: "Mitey Mite Conveyor",       # Sunshine Strawberry base learning carpet
     258178409: "Tiny Tigers Conveyor",      # Sunshine Village kids carpet
     258181309: "Sunny Side Magic Carpet",   # Lake Louise main learning carpet
     474516938: "Kids Magic Carpet",         # Lake Louise secondary carpet
     1326513050: "Sunny Tube Carpet",        # Lake Louise tube park carpet
+    # Mount St. Louis Moonstone official lift names
+    205687388: "Promenade Express",
+    205687389: "Adventure 8",
+    205687391: "Kinder A",
+    205687396: "Josl Huter Express",
+    205687397: "Summit Express",
+    1385977464: "Elfriede Huter Express",
+    # Horseshoe Valley official lift names
+    257961134: "Double Chair",
+    1019743659: "Snow School Express",
+    1132614105: "Tube Park Carpet",
 }
 
 
@@ -81,7 +111,7 @@ def norm_name(s):
         return ""
     raw = s.lower().replace("&amp;", "and").replace("&", "and").replace("&#039;", "").replace("'", "")
     stripped = re.sub(
-        r"\b(quad|chairlift|chair|express|high speed|six pack|luxury|fixed grip|conveyor|carpet|gondola|platter|t-bar|the|ii|i)\b",
+        r"\b(\d+\s*person|quad|triple|chairlift|chair|express|xpress|high speed|six pack|luxury|fixed grip|conveyor|carpet|gondola|platter|t-bar|lift|the|ii|i)\b",
         " ",
         raw,
     )
@@ -132,6 +162,10 @@ def build_geojson(resort_id, cfg):
         raw_coords = [nodes[nid] for nid in node_ids if nid in nodes]
         if len(raw_coords) < 2:
             continue
+        if "max_lat" in cfg:
+            avg_lat = sum(c[1] for c in raw_coords) / len(raw_coords)
+            if avg_lat > cfg["max_lat"]:
+                continue
 
         # 1. Ski Trails (downhill + terrain park)
         piste_type = tags.get("piste:type")

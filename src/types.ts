@@ -35,6 +35,7 @@ export interface WebcamItem {
   id: string;
   title: string;
   url: string;
+  linkUrl?: string;
 }
 
 export interface ResortData {
@@ -58,6 +59,10 @@ export interface ResortData {
   skiableAcres: number;
   distanceFromBanffKm: number;
   driveMinutesFromBanff: number;
+  hubName?: string;
+  hubNameZh?: string;
+  distanceFromHubKm?: number;
+  driveMinutesFromHub?: number;
   officialUrl: string;
   geojsonUrl: string;
   status: 'open' | 'closed';
@@ -105,10 +110,14 @@ export interface RegionInfo {
   id: string;
   name: string;
   nameZh: string;
+  shortName?: string;
+  shortNameZh?: string;
   province: string;
   active: boolean;
   center?: [number, number];
   zoom?: number;
+  hubLabel?: string;
+  hubCoordinates?: [number, number];
 }
 
 export interface ConditionsPayload {

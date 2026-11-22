@@ -18,6 +18,10 @@ interface Props {
 export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
   const openLifts = resort.lifts.filter((l) => l.status === 'open');
   const isOpen = resort.status === 'open';
+  const hubEn = resort.hubName || (resort.regionId === 'toronto' ? 'Toronto' : 'Banff');
+  const hubZh = resort.hubNameZh || (resort.regionId === 'toronto' ? '多伦多' : '班夫镇');
+  const driveMins = resort.driveMinutesFromHub ?? resort.driveMinutesFromBanff;
+  const baseDepth = resort.snow.upperBaseCm || resort.snow.baseCm || 0;
 
   return (
     <article
@@ -42,8 +46,8 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
                 ? '营业中 · LIVE'
                 : 'OPEN · LIVE'
               : lang === 'zh'
-                ? '暂未开放'
-                : 'CLOSED'}
+                ? '待开板 · 造雪准备中'
+                : 'PRE-SEASON · CLOSED'}
           </span>
           <span className="resort-card__elev">
             ▲ {formatElev(resort.elevationSummitM, unit)} · ↕ {formatElev(resort.verticalDropM, unit)}
@@ -53,7 +57,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
         <h2 className="resort-card__title">
           <span>{resort.shortName}</span>
           <span className="resort-card__zh">
-            {lang === 'zh' ? resort.nameZh : `${resort.driveMinutesFromBanff} min from Banff`}
+            {lang === 'zh' ? resort.nameZh : `${driveMins} min from ${hubEn}`}
           </span>
         </h2>
 
@@ -76,7 +80,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
           <div className="meter-track">
             <div
               className="meter-fill"
-              style={{ width: `${Math.max(4, resort.terrain.runsOpenPct)}%` }}
+              style={{ width: `${resort.terrain.runsOpen > 0 ? Math.max(5, resort.terrain.runsOpenPct) : 0}%` }}
             />
           </div>
           <span className="primary-metric__meta">
@@ -92,18 +96,22 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
             {lang === 'zh' ? '雪底厚度' : 'Snow Base'}
           </span>
           <div className="primary-metric__number">
-            {formatSnow(resort.snow.upperBaseCm || resort.snow.baseCm, unit)}
+            {formatSnow(baseDepth, unit)}
           </div>
           <div className="meter-track">
             <div
               className="meter-fill"
-              style={{ width: `${Math.min(100, Math.round((resort.snow.upperBaseCm / 150) * 100))}%` }}
+              style={{ width: `${baseDepth > 0 ? Math.min(100, Math.max(5, Math.round((baseDepth / 150) * 100))) : 0}%` }}
             />
           </div>
           <span className="primary-metric__meta">
-            {lang === 'zh'
-              ? `7日新雪 +${formatSnow(resort.snow.snow7dCm, unit)}`
-              : `7d: +${formatSnow(resort.snow.snow7dCm, unit)}`}
+            {resort.snow.snow7dCm > 0
+              ? lang === 'zh'
+                ? `7日新雪 +${formatSnow(resort.snow.snow7dCm, unit)}`
+                : `7d: +${formatSnow(resort.snow.snow7dCm, unit)}`
+              : lang === 'zh'
+                ? `7日预报 +${formatSnow(resort.snow.forecast7dCm, unit)}`
+                : `7d est: +${formatSnow(resort.snow.forecast7dCm, unit)}`}
           </span>
         </div>
 
@@ -119,7 +127,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
           <div className="meter-track">
             <div
               className="meter-fill is-lift"
-              style={{ width: `${Math.max(6, resort.terrain.liftsOpenPct)}%` }}
+              style={{ width: `${resort.terrain.liftsOpen > 0 ? Math.max(6, resort.terrain.liftsOpenPct) : 0}%` }}
             />
           </div>
           <span className="primary-metric__meta">
@@ -140,7 +148,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
         </div>
         <div className="snow-stat">
           <span className="snow-stat__label">{lang === 'zh' ? '7日降雪' : '7-Day'}</span>
-          <span className="snow-stat__val is-highlight">
+          <span className={`snow-stat__val ${resort.snow.snow7dCm > 0 ? 'is-highlight' : ''}`}>
             {formatSnow(resort.snow.snow7dCm, unit)}
           </span>
         </div>
@@ -150,7 +158,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
         </div>
         <div className="snow-stat">
           <span className="snow-stat__label">{lang === 'zh' ? '未来7日预报' : 'Next 7d Est.'}</span>
-          <span className="snow-stat__val">
+          <span className={`snow-stat__val ${resort.snow.forecast7dCm > 0 ? 'is-highlight' : ''}`}>
             +{formatSnow(resort.snow.forecast7dCm, unit)}
           </span>
         </div>
@@ -190,7 +198,7 @@ export function ResortCard({ resort, unit, lang, onOpenMap }: Props) {
 
       <div className="resort-card__footer">
         <span className="updated-stamp">
-          {lang === 'zh' ? `距班夫镇 ${resort.driveMinutesFromBanff} 分钟车程` : `Updated ${resort.lastUpdated}`}
+          {lang === 'zh' ? `距${hubZh}约 ${driveMins} 分钟车程` : `Updated ${resort.lastUpdated}`}
         </span>
         <button
           id={`open-map-btn-${resort.id}`}

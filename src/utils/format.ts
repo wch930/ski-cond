@@ -9,7 +9,7 @@ export function normKey(str: string): string {
     .replace(/&#039;|['’`]/g, '');
   const stripped = raw
     .replace(
-      /\b(quad|chairlift|chair|express|high speed|six pack|luxury|fixed grip|conveyor|carpet|gondola|platter|t-bar|the|ii|i)\b/g,
+      /\b(\d+\s*person|quad|triple|chairlift|chair|express|xpress|high speed|six pack|luxury|fixed grip|conveyor|carpet|gondola|platter|t-bar|lift|the|ii|i)\b/g,
       ' '
     )
     .replace(/[^a-z0-9]+/g, '');
@@ -76,7 +76,7 @@ export function liftTypeLabel(liftType: string, lang: Lang): string {
   const t = (liftType || '').toLowerCase();
   if (t.includes('gondola')) return lang === 'zh' ? '箱式缆车 Gondola' : 'Gondola';
   if (t.includes('carpet') || t.includes('conveyor')) return lang === 'zh' ? '魔毯 Magic Carpet' : 'Magic Carpet';
-  if (t.includes('platter') || t.includes('t-bar') || t.includes('drag')) return lang === 'zh' ? '拖牵 T-Bar' : 'Surface Lift';
+  if (t.includes('platter') || t.includes('t-bar') || t.includes('drag') || t.includes('rope')) return lang === 'zh' ? '拖牵 Surface Lift' : 'Surface Lift';
   return lang === 'zh' ? '吊椅缆车 Chairlift' : 'Chairlift';
 }
 
@@ -85,15 +85,17 @@ export function weatherDescription(code: number, lang: Lang): string {
   if (code <= 2) return lang === 'zh' ? '晴间多云' : 'Partly Cloudy';
   if (code === 3) return lang === 'zh' ? '高山多云' : 'Overcast';
   if (code === 45 || code === 48) return lang === 'zh' ? '山间云雾' : 'Alpine Fog';
+  if (code >= 51 && code <= 67) return lang === 'zh' ? '微雨湿雪' : 'Light Rain / Mix';
   if (code >= 71 && code <= 77) return lang === 'zh' ? '正在降雪' : 'Snowing';
   if (code === 85 || code === 86) return lang === 'zh' ? '阵雪粉雪' : 'Snow Showers';
-  return lang === 'zh' ? '高山干冷' : 'Crisp Alpine';
+  return lang === 'zh' ? '晴冷微风' : 'Crisp & Cool';
 }
 
 const TRAIL_ALIAS_MAP: Record<string, string> = {
   banffavenue: 'banffave',
   boutrysbowl: 'bountysbowl',
   strawberrypark: 'strawberryterrainpark',
+  founder: 'founders',
 };
 
 function canonicalTrailKey(k: string): string {

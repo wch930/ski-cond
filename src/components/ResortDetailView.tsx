@@ -144,7 +144,15 @@ export function ResortDetailView({ resort, unit, lang, onBack }: Props) {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <button id="back-overview-btn" type="button" className="back-link-btn" onClick={onBack}>
               <ArrowLeft size={14} />
-              <span>{lang === 'zh' ? '返回班夫雪场总览' : 'Back to Banff Resorts'}</span>
+              <span>
+                {resort.regionId === 'toronto'
+                  ? lang === 'zh'
+                    ? '返回多伦多周边雪场'
+                    : 'Back to Toronto Resorts'
+                  : lang === 'zh'
+                    ? '返回班夫雪场总览'
+                    : 'Back to Banff Resorts'}
+              </span>
             </button>
             <a
               href={resort.officialUrl}
@@ -615,38 +623,79 @@ export function ResortDetailView({ resort, unit, lang, onBack }: Props) {
                 <span style={{ fontSize: '0.78rem', color: 'var(--ink-secondary)', fontWeight: 600 }}>
                   {lang === 'zh' ? '雪场官方实时监控画面' : 'Live Mountain Webcams'}
                 </span>
-                <button
-                  type="button"
-                  className="icon-btn"
-                  style={{ height: 28 }}
-                  onClick={() => setCamNonce(Date.now())}
-                >
-                  {lang === 'zh' ? '刷新画面' : 'Reload Cams'}
-                </button>
+                {resort.webcams.length > 0 && (
+                  <button
+                    type="button"
+                    className="icon-btn"
+                    style={{ height: 28 }}
+                    onClick={() => setCamNonce(Date.now())}
+                  >
+                    {lang === 'zh' ? '刷新画面' : 'Reload Cams'}
+                  </button>
+                )}
               </div>
-              <div className="webcam-grid">
-                {resort.webcams.map((cam) => (
-                  <div key={cam.id} className="webcam-card">
-                    <img
-                      src={`/api/webcam?url=${encodeURIComponent(cam.url)}&_t=${camNonce}`}
-                      alt={cam.title}
-                      loading="lazy"
-                      onError={(e) => {
-                        // Direct fallback if running without server proxy
-                        const target = e.currentTarget;
-                        if (!target.dataset.directTried) {
-                          target.dataset.directTried = '1';
-                          target.src = cam.url;
-                        }
-                      }}
-                    />
-                    <div className="webcam-card__caption">
-                      <span>{cam.title}</span>
-                      <span style={{ color: 'var(--status-open)', fontSize: '0.7rem' }}>● LIVE</span>
+              {resort.webcams.length === 0 ? (
+                <div className="panel-block" style={{ textAlign: 'center', padding: '22px 16px' }}>
+                  <p style={{ margin: '0 0 12px', fontSize: '0.83rem', color: 'var(--ink-secondary)' }}>
+                    {lang === 'zh'
+                      ? `${resort.nameZh} 实时画面由官方 Live View 页面提供，可点击下方按钮查看雪坡实况。`
+                      : `Live slope cameras for ${resort.name} are hosted directly on the resort's official Live View portal.`}
+                  </p>
+                  <a
+                    href={resort.id === 'gleneden' ? 'https://gleneden.on.ca/live-view/' : resort.officialUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-btn"
+                    style={{ textDecoration: 'none', display: 'inline-flex' }}
+                  >
+                    <span>{lang === 'zh' ? '打开官网实时画面' : 'Open Official Live Cams'}</span>
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+              ) : (
+                <div className="webcam-grid">
+                  {resort.webcams.map((cam) => (
+                    <div key={cam.id} className="webcam-card">
+                      <img
+                        src={`/api/webcam?url=${encodeURIComponent(cam.url)}&_t=${camNonce}`}
+                        alt={cam.title}
+                        loading="lazy"
+                        onError={(e) => {
+                          // Direct fallback if running without server proxy
+                          const target = e.currentTarget;
+                          if (!target.dataset.directTried) {
+                            target.dataset.directTried = '1';
+                            target.src = cam.url;
+                          }
+                        }}
+                      />
+                      <div className="webcam-card__caption">
+                        <span>{cam.title}</span>
+                        {cam.linkUrl ? (
+                          <a
+                            href={cam.linkUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            style={{
+                              color: 'var(--accent-alpine)',
+                              fontSize: '0.72rem',
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 3,
+                            }}
+                          >
+                            <span>{lang === 'zh' ? '视频直播' : 'Watch Live'}</span>
+                            <ExternalLink size={11} />
+                          </a>
+                        ) : (
+                          <span style={{ color: 'var(--status-open)', fontSize: '0.7rem' }}>● LIVE</span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </>
           )}
         </div>

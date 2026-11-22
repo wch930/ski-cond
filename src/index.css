@@ -374,24 +374,56 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 11px;
+  padding: 6px 13px;
   border-radius: var(--radius-pill);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 600;
+  font-family: inherit;
   border: 1px solid var(--border-hairline);
   background: var(--bg-surface);
   color: var(--ink-secondary);
   transition: all 0.15s ease;
 }
 
+.region-chip.is-clickable {
+  cursor: pointer;
+}
+
+.region-chip.is-clickable:hover:not(.is-active) {
+  border-color: var(--border-strong);
+  color: var(--ink-primary);
+  background: var(--bg-subtle);
+}
+
 .region-chip.is-active {
-  background: var(--accent-alpine-soft);
-  border-color: hsla(203, 84%, 38%, 0.35);
-  color: var(--accent-alpine);
+  background: var(--accent-alpine);
+  border-color: var(--accent-alpine);
+  color: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.region-chip__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.08);
+  color: inherit;
+}
+
+.region-chip.is-active .region-chip__count {
+  background: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
 }
 
 .region-chip.is-upcoming {
-  opacity: 0.68;
+  opacity: 0.62;
   cursor: default;
 }
 
@@ -456,13 +488,17 @@ button {
 }
 
 /* ==========================================================================
-   Resort Telemetry Cards Grid (SkiBig3)
+   Resort Telemetry Cards Grid (SkiBig3 & Greater Toronto)
    ========================================================================== */
 
 .resorts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.resorts-grid.is-quad {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .resort-card {
@@ -1483,7 +1519,8 @@ button {
   .telemetry-cell:nth-child(2) {
     border-bottom: 1px solid var(--border-hairline);
   }
-  .resorts-grid {
+  .resorts-grid,
+  .resorts-grid.is-quad {
     grid-template-columns: 1fr;
   }
   .nav-center {
