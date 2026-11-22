@@ -107,6 +107,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  overflow-x: clip;
   font-family: var(--font-sans);
   color: var(--ink-primary);
   background-color: var(--bg-canvas);
@@ -211,6 +212,7 @@ button {
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -259,6 +261,10 @@ button {
   flex-shrink: 0;
 }
 
+.show-xs {
+  display: none;
+}
+
 .segmented-toggle {
   display: inline-flex;
   background: var(--bg-subtle);
@@ -275,6 +281,7 @@ button {
   font-weight: 600;
   color: var(--ink-secondary);
   border-radius: 6px;
+  white-space: nowrap;
   transition: all 0.14s ease;
 }
 
@@ -297,7 +304,14 @@ button {
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--ink-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all 0.15s ease;
+}
+
+.icon-btn--square {
+  width: 34px;
+  padding: 0;
 }
 
 .icon-btn:hover:not(:disabled) {
@@ -1442,6 +1456,14 @@ button {
    ========================================================================== */
 
 @media (max-width: 1120px) {
+  .brand-sub,
+  .refresh-btn__label {
+    display: none;
+  }
+  .refresh-btn {
+    width: 34px;
+    padding: 0;
+  }
   .resorts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1505,10 +1527,74 @@ button {
     border-radius: var(--radius-pill);
     font-size: 0.8rem;
     font-weight: 700;
+    white-space: nowrap;
   }
   .mobile-view-switch button.is-active {
     background: var(--accent-alpine);
     color: #fff;
+  }
+}
+
+@media (max-width: 680px) {
+  .top-nav__inner {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .brand-btn {
+    padding: 2px 0;
+    gap: 7px;
+    min-width: 0;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+  .brand-title {
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+  .nav-actions {
+    gap: 5px;
+  }
+  .hide-xs {
+    display: none;
+  }
+  .show-xs {
+    display: inline;
+  }
+  .segmented-toggle button {
+    padding: 4px 7px;
+    font-size: 0.72rem;
+  }
+  .icon-btn--square,
+  .refresh-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+  .overview-shell {
+    padding: 16px 12px 44px;
+    gap: 18px;
+  }
+  .map-hud-top {
+    top: 10px;
+    left: 10px;
+    right: 48px;
+    gap: 6px;
+  }
+  .hud-btn {
+    padding: 4px 7px;
+    font-size: 0.71rem;
+  }
+  .map-legend {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .hide-xxs {
+    display: none;
   }
 }
 

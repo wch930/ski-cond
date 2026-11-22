@@ -46,7 +46,9 @@ export function TopNav({
             </svg>
           </span>
           <span className="brand-text">
-            <span className="brand-title">POWDERLINE · 雪线</span>
+            <span className="brand-title">
+              POWDERLINE<span className="hide-xxs"> · 雪线</span>
+            </span>
             <span className="brand-sub">
               {lang === 'zh' ? 'Banff 班夫实时雪况与雪道图' : 'Banff Live Snow & Trail Maps'}
             </span>
@@ -87,7 +89,8 @@ export function TopNav({
               className={unit === 'metric' ? 'is-active' : ''}
               onClick={() => onChangeUnit('metric')}
             >
-              cm / °C
+              <span className="hide-xs">cm / °C</span>
+              <span className="show-xs">cm</span>
             </button>
             <button
               id="unit-imperial-btn"
@@ -95,7 +98,8 @@ export function TopNav({
               className={unit === 'imperial' ? 'is-active' : ''}
               onClick={() => onChangeUnit('imperial')}
             >
-              in / °F
+              <span className="hide-xs">in / °F</span>
+              <span className="show-xs">in</span>
             </button>
           </div>
 
@@ -106,7 +110,8 @@ export function TopNav({
               className={lang === 'zh' ? 'is-active' : ''}
               onClick={() => onChangeLang('zh')}
             >
-              中文
+              <span className="hide-xs">中文</span>
+              <span className="show-xs">中</span>
             </button>
             <button
               id="lang-en-btn"
@@ -121,8 +126,9 @@ export function TopNav({
           <button
             id="theme-toggle-btn"
             type="button"
-            className="icon-btn"
+            className="icon-btn icon-btn--square"
             onClick={onToggleTheme}
+            aria-label={theme === 'day' ? '切换夜滑深色模式' : '切换冰川日间模式'}
             title={theme === 'day' ? '切换夜滑深色模式' : '切换冰川日间模式'}
           >
             {theme === 'day' ? <Moon size={15} /> : <Sun size={15} />}
@@ -131,13 +137,16 @@ export function TopNav({
           <button
             id="refresh-live-btn"
             type="button"
-            className="icon-btn"
+            className="icon-btn refresh-btn"
             onClick={onRefresh}
             disabled={isRefreshing}
+            aria-label={lang === 'zh' ? '立即拉取雪场官方最新雪况' : 'Fetch live official snow report'}
             title={lang === 'zh' ? '立即拉取雪场官方最新雪况' : 'Fetch live official snow report'}
           >
             <RefreshCw size={14} className={isRefreshing ? 'spin' : ''} />
-            <span>{lang === 'zh' ? (isRefreshing ? '同步中' : '实时刷新') : isRefreshing ? 'Syncing' : 'Refresh'}</span>
+            <span className="refresh-btn__label">
+              {lang === 'zh' ? (isRefreshing ? '同步中' : '实时刷新') : isRefreshing ? 'Syncing' : 'Refresh'}
+            </span>
           </button>
         </div>
       </div>
